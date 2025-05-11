@@ -1,0 +1,19 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>Logo.png</file>
+        <file>logoo.jpg</file>
+        <file>add-16.ico</file>
+        <file>add-16.png</file>
+        <file>trash-9-16.ico</file>
+        <file>available-updates-16.ico</file>
+        <file>add-row-16.ico</file>
+        <file>upload-16.ico</file>
+        <file>activity-feed-16.ico</file>
+        <file>cancel-16.ico</file>
+        <file>user-16.ico</file>
+    </qresource>
+    <qresource prefix="/files">
+        <file>style.qss</file>
+        <file>style.css</file>
+    </qresource>
+</RCC>
