@@ -1,0 +1,11 @@
+debug/addcity.o
+debug/addedge.o
+debug/deletecity.o
+debug/deleteedge.o
+debug/main.o
+debug/mainwindow.o
+debug/moc_addcity.o
+debug/moc_addedge.o
+debug/moc_deletecity.o
+debug/moc_deleteedge.o
+debug/moc_mainwindow.o

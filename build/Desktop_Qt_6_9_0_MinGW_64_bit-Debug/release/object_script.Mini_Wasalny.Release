@@ -1,0 +1,11 @@
+release/addcity.o
+release/addedge.o
+release/deletecity.o
+release/deleteedge.o
+release/main.o
+release/mainwindow.o
+release/moc_addcity.o
+release/moc_addedge.o
+release/moc_deletecity.o
+release/moc_deleteedge.o
+release/moc_mainwindow.o
