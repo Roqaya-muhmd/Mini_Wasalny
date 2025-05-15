@@ -21,6 +21,11 @@
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
+#include "addcity.h"
+#include "addedge.h"
+#include "addgraph.h"
+#include "deletecity.h"
+#include "deleteedge.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -40,27 +45,26 @@ public:
     QSpacerItem *horizontalSpacer_2;
     QPushButton *user_btn;
     QStackedWidget *stackedWidget;
-    QWidget *page;
+    addgraph *page;
     QGridLayout *gridLayout_2;
-    QLabel *label_4;
-    QWidget *page_2;
+    DeleteCity *page_2;
     QGridLayout *gridLayout_3;
-    QLabel *label_5;
-    QWidget *page_3;
+    AddCity *page_3;
     QGridLayout *gridLayout_4;
-    QLabel *label_6;
-    QWidget *page_4;
+    AddEdge *page_4;
     QGridLayout *gridLayout_5;
-    QLabel *label_7;
     QWidget *page_5;
     QGridLayout *gridLayout_6;
     QLabel *label_8;
-    QWidget *page_6;
+    DeleteEdge *page_6;
     QGridLayout *gridLayout_7;
-    QLabel *label_9;
     QWidget *page_7;
     QGridLayout *gridLayout_8;
     QLabel *label_10;
+    QWidget *page_8;
+    QLabel *label;
+    QWidget *page_9;
+    QLabel *label_2;
     QWidget *icon_only_widget;
     QVBoxLayout *verticalLayout_3;
     QHBoxLayout *horizontalLayout_3;
@@ -71,6 +75,8 @@ public:
     QPushButton *addc_btn_1;
     QPushButton *update_btn_1;
     QPushButton *upload_btn_1;
+    QPushButton *deleteE_btn2;
+    QPushButton *show_btn2;
     QSpacerItem *verticalSpacer;
     QPushButton *exit_btn_1;
     QWidget *full_menu_widget;
@@ -84,6 +90,8 @@ public:
     QPushButton *addc_btn_2;
     QPushButton *update_btn_2;
     QPushButton *upload_btn_2;
+    QPushButton *deleteE_btn1;
+    QPushButton *show_btn1;
     QSpacerItem *verticalSpacer_2;
     QPushButton *exit_btn_2;
 
@@ -95,12 +103,7 @@ public:
         MainWindow->setStyleSheet(QString::fromUtf8("#widget {\n"
 "		background-color: #f9fafd;\n"
 "	}\n"
-"#user_btn {\n"
-"		border: none;\n"
-"	}\n"
-"#search_btn {\n"
-"		border: none;\n"
-"	}"));
+""));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         gridLayout = new QGridLayout(centralwidget);
@@ -161,8 +164,10 @@ public:
         user_btn = new QPushButton(widget);
         user_btn->setObjectName("user_btn");
         QIcon icon2;
-        icon2.addFile(QString::fromUtf8(":/icon/icon/user-48.ico"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
+        icon2.addFile(QString::fromUtf8(":/icons/user-16.ico"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
         user_btn->setIcon(icon2);
+        user_btn->setCheckable(true);
+        user_btn->setAutoExclusive(true);
 
         horizontalLayout_4->addWidget(user_btn);
 
@@ -171,55 +176,26 @@ public:
 
         stackedWidget = new QStackedWidget(widget_3);
         stackedWidget->setObjectName("stackedWidget");
-        page = new QWidget();
+        page = new addgraph();
         page->setObjectName("page");
         gridLayout_2 = new QGridLayout(page);
         gridLayout_2->setObjectName("gridLayout_2");
-        label_4 = new QLabel(page);
-        label_4->setObjectName("label_4");
-        QFont font;
-        font.setPointSize(20);
-        label_4->setFont(font);
-        label_4->setAlignment(Qt::AlignmentFlag::AlignCenter);
-
-        gridLayout_2->addWidget(label_4, 0, 0, 1, 1);
-
         stackedWidget->addWidget(page);
-        page_2 = new QWidget();
+        page_2 = new DeleteCity();
         page_2->setObjectName("page_2");
         gridLayout_3 = new QGridLayout(page_2);
         gridLayout_3->setObjectName("gridLayout_3");
-        label_5 = new QLabel(page_2);
-        label_5->setObjectName("label_5");
-        label_5->setFont(font);
-        label_5->setAlignment(Qt::AlignmentFlag::AlignCenter);
-
-        gridLayout_3->addWidget(label_5, 0, 0, 1, 1);
-
         stackedWidget->addWidget(page_2);
-        page_3 = new QWidget();
+        page_3 = new AddCity();
         page_3->setObjectName("page_3");
+        page_3->setStyleSheet(QString::fromUtf8(""));
         gridLayout_4 = new QGridLayout(page_3);
         gridLayout_4->setObjectName("gridLayout_4");
-        label_6 = new QLabel(page_3);
-        label_6->setObjectName("label_6");
-        label_6->setFont(font);
-        label_6->setAlignment(Qt::AlignmentFlag::AlignCenter);
-
-        gridLayout_4->addWidget(label_6, 0, 0, 1, 1);
-
         stackedWidget->addWidget(page_3);
-        page_4 = new QWidget();
+        page_4 = new AddEdge();
         page_4->setObjectName("page_4");
         gridLayout_5 = new QGridLayout(page_4);
         gridLayout_5->setObjectName("gridLayout_5");
-        label_7 = new QLabel(page_4);
-        label_7->setObjectName("label_7");
-        label_7->setFont(font);
-        label_7->setAlignment(Qt::AlignmentFlag::AlignCenter);
-
-        gridLayout_5->addWidget(label_7, 0, 0, 1, 1);
-
         stackedWidget->addWidget(page_4);
         page_5 = new QWidget();
         page_5->setObjectName("page_5");
@@ -227,23 +203,18 @@ public:
         gridLayout_6->setObjectName("gridLayout_6");
         label_8 = new QLabel(page_5);
         label_8->setObjectName("label_8");
+        QFont font;
+        font.setPointSize(20);
         label_8->setFont(font);
         label_8->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         gridLayout_6->addWidget(label_8, 0, 0, 1, 1);
 
         stackedWidget->addWidget(page_5);
-        page_6 = new QWidget();
+        page_6 = new DeleteEdge();
         page_6->setObjectName("page_6");
         gridLayout_7 = new QGridLayout(page_6);
         gridLayout_7->setObjectName("gridLayout_7");
-        label_9 = new QLabel(page_6);
-        label_9->setObjectName("label_9");
-        label_9->setFont(font);
-        label_9->setAlignment(Qt::AlignmentFlag::AlignCenter);
-
-        gridLayout_7->addWidget(label_9, 0, 0, 1, 1);
-
         stackedWidget->addWidget(page_6);
         page_7 = new QWidget();
         page_7->setObjectName("page_7");
@@ -257,6 +228,18 @@ public:
         gridLayout_8->addWidget(label_10, 0, 0, 1, 1);
 
         stackedWidget->addWidget(page_7);
+        page_8 = new QWidget();
+        page_8->setObjectName("page_8");
+        label = new QLabel(page_8);
+        label->setObjectName("label");
+        label->setGeometry(QRect(220, 120, 37, 16));
+        stackedWidget->addWidget(page_8);
+        page_9 = new QWidget();
+        page_9->setObjectName("page_9");
+        label_2 = new QLabel(page_9);
+        label_2->setObjectName("label_2");
+        label_2->setGeometry(QRect(300, 140, 37, 12));
+        stackedWidget->addWidget(page_9);
 
         verticalLayout_5->addWidget(stackedWidget);
 
@@ -269,7 +252,7 @@ public:
 ";\n"
 "		width:50px;}\n"
 "#icon_only_widget QPushButton, QLabel {\n"
-"		height:50px;\n"
+"		height:30px;\n"
 "		border:none;\n"
 "		/* border-bottom: 1px solid #b0b0b0; */\n"
 "	}\n"
@@ -358,6 +341,26 @@ public:
 
         verticalLayout->addWidget(upload_btn_1);
 
+        deleteE_btn2 = new QPushButton(icon_only_widget);
+        deleteE_btn2->setObjectName("deleteE_btn2");
+        QIcon icon8;
+        icon8.addFile(QString::fromUtf8(":/icons/road-2-16.ico"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
+        deleteE_btn2->setIcon(icon8);
+        deleteE_btn2->setCheckable(true);
+        deleteE_btn2->setAutoExclusive(true);
+
+        verticalLayout->addWidget(deleteE_btn2);
+
+        show_btn2 = new QPushButton(icon_only_widget);
+        show_btn2->setObjectName("show_btn2");
+        QIcon icon9;
+        icon9.addFile(QString::fromUtf8(":/icons/mind-map-16.ico"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
+        show_btn2->setIcon(icon9);
+        show_btn2->setCheckable(true);
+        show_btn2->setAutoExclusive(true);
+
+        verticalLayout->addWidget(show_btn2);
+
 
         verticalLayout_3->addLayout(verticalLayout);
 
@@ -367,9 +370,9 @@ public:
 
         exit_btn_1 = new QPushButton(icon_only_widget);
         exit_btn_1->setObjectName("exit_btn_1");
-        QIcon icon8;
-        icon8.addFile(QString::fromUtf8(":/icons/cancel-16.ico"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
-        exit_btn_1->setIcon(icon8);
+        QIcon icon10;
+        icon10.addFile(QString::fromUtf8(":/icons/cancel-16.ico"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
+        exit_btn_1->setIcon(icon10);
         exit_btn_1->setIconSize(QSize(14, 14));
 
         verticalLayout_3->addWidget(exit_btn_1);
@@ -484,6 +487,22 @@ public:
 
         verticalLayout_2->addWidget(upload_btn_2);
 
+        deleteE_btn1 = new QPushButton(full_menu_widget);
+        deleteE_btn1->setObjectName("deleteE_btn1");
+        deleteE_btn1->setIcon(icon4);
+        deleteE_btn1->setCheckable(true);
+        deleteE_btn1->setAutoExclusive(true);
+
+        verticalLayout_2->addWidget(deleteE_btn1);
+
+        show_btn1 = new QPushButton(full_menu_widget);
+        show_btn1->setObjectName("show_btn1");
+        show_btn1->setIcon(icon9);
+        show_btn1->setCheckable(true);
+        show_btn1->setAutoExclusive(true);
+
+        verticalLayout_2->addWidget(show_btn1);
+
 
         verticalLayout_4->addLayout(verticalLayout_2);
 
@@ -493,7 +512,7 @@ public:
 
         exit_btn_2 = new QPushButton(full_menu_widget);
         exit_btn_2->setObjectName("exit_btn_2");
-        exit_btn_2->setIcon(icon8);
+        exit_btn_2->setIcon(icon10);
         exit_btn_2->setIconSize(QSize(14, 14));
 
         verticalLayout_4->addWidget(exit_btn_2);
@@ -518,8 +537,12 @@ public:
         QObject::connect(addc_btn_2, &QPushButton::toggled, addc_btn_1, &QPushButton::setChecked);
         QObject::connect(update_btn_2, &QPushButton::toggled, update_btn_1, &QPushButton::setChecked);
         QObject::connect(upload_btn_2, &QPushButton::toggled, upload_btn_1, &QPushButton::setChecked);
+        QObject::connect(deleteE_btn1, &QPushButton::toggled, deleteE_btn2, &QPushButton::setChecked);
+        QObject::connect(deleteE_btn2, &QPushButton::toggled, deleteE_btn1, &QPushButton::setChecked);
+        QObject::connect(show_btn2, &QPushButton::toggled, show_btn1, &QPushButton::setChecked);
+        QObject::connect(show_btn1, &QPushButton::toggled, show_btn2, &QPushButton::setChecked);
 
-        stackedWidget->setCurrentIndex(5);
+        stackedWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -531,27 +554,28 @@ public:
         change_btn->setText(QString());
         search_btn->setText(QCoreApplication::translate("MainWindow", "Welcome to \331\210\330\265\331\204\331\206\331\212", nullptr));
         user_btn->setText(QString());
-        label_4->setText(QCoreApplication::translate("MainWindow", "Home Page", nullptr));
-        label_5->setText(QCoreApplication::translate("MainWindow", "Dashboard Page", nullptr));
-        label_6->setText(QCoreApplication::translate("MainWindow", "Orders Page", nullptr));
-        label_7->setText(QCoreApplication::translate("MainWindow", "Product Page", nullptr));
         label_8->setText(QCoreApplication::translate("MainWindow", "Customers Page", nullptr));
-        label_9->setText(QCoreApplication::translate("MainWindow", "Search Page", nullptr));
         label_10->setText(QCoreApplication::translate("MainWindow", "User Page", nullptr));
+        label->setText(QCoreApplication::translate("MainWindow", "page 8", nullptr));
+        label_2->setText(QCoreApplication::translate("MainWindow", "page 9", nullptr));
         logo_label_1->setText(QString());
         addg_btn_1->setText(QString());
         delete_btn_1->setText(QString());
         addc_btn_1->setText(QString());
         update_btn_1->setText(QString());
         upload_btn_1->setText(QString());
+        deleteE_btn2->setText(QString());
+        show_btn2->setText(QString());
         exit_btn_1->setText(QString());
         logo_label_2->setText(QString());
         logo_label_3->setText(QCoreApplication::translate("MainWindow", "\331\210\330\265\331\204\331\206\331\212", nullptr));
         addg_btn_2->setText(QCoreApplication::translate("MainWindow", "\330\243\330\257\330\256\331\204 \330\247\331\204\331\205\330\257\331\206", nullptr));
         delete_btn_2->setText(QCoreApplication::translate("MainWindow", "\330\243\330\255\330\260\331\201 \330\247\331\204\331\205\330\257\331\206\331\212\330\251", nullptr));
         addc_btn_2->setText(QCoreApplication::translate("MainWindow", "\330\243\330\266\331\212\331\201 \331\205\330\257\331\206\331\212\330\251", nullptr));
-        update_btn_2->setText(QCoreApplication::translate("MainWindow", "\330\252\330\271\330\257\331\212\331\204", nullptr));
+        update_btn_2->setText(QCoreApplication::translate("MainWindow", "\330\271\330\257\331\204 \330\247\331\204\330\267\330\261\331\212\331\202", nullptr));
         upload_btn_2->setText(QCoreApplication::translate("MainWindow", "\330\243\330\261\331\201\330\271 \330\247\331\204\331\205\330\257\331\206", nullptr));
+        deleteE_btn1->setText(QCoreApplication::translate("MainWindow", "\330\243\330\255\330\260\331\201 \330\267\330\261\331\212\331\202", nullptr));
+        show_btn1->setText(QCoreApplication::translate("MainWindow", "Show Graph", nullptr));
         exit_btn_2->setText(QCoreApplication::translate("MainWindow", "Exit", nullptr));
     } // retranslateUi
 

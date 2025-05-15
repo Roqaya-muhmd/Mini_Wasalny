@@ -11,9 +11,17 @@
         <file>activity-feed-16.ico</file>
         <file>cancel-16.ico</file>
         <file>user-16.ico</file>
+        <file>road-2-16.ico</file>
+        <file>mind-map-16.ico</file>
     </qresource>
     <qresource prefix="/files">
         <file>style.qss</file>
         <file>style.css</file>
+    </qresource>
+    <qresource prefix="/otherpages"/>
+    <qresource prefix="/background_images">
+        <file>map.jpg</file>
+        <file>ff.jpg</file>
+        <file>mm.png</file>
     </qresource>
 </RCC>

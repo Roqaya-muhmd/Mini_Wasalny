@@ -53,7 +53,7 @@ public:
     QLabel *label_5;
     QWidget *widget_2;
     QPushButton *pushButton_12;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QHBoxLayout *horizontalLayout_3;
     QPushButton *pushButton_11;
     QSpacerItem *horizontalSpacer;
@@ -258,13 +258,13 @@ public:
         QIcon icon5;
         icon5.addFile(QString::fromUtf8(":/icons/activity-feed-16.ico"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
         pushButton_12->setIcon(icon5);
-        widget = new QWidget(widget_2);
-        widget->setObjectName("widget");
-        widget->setGeometry(QRect(0, 0, 786, 22));
-        horizontalLayout_3 = new QHBoxLayout(widget);
+        layoutWidget = new QWidget(widget_2);
+        layoutWidget->setObjectName("layoutWidget");
+        layoutWidget->setGeometry(QRect(0, 0, 786, 22));
+        horizontalLayout_3 = new QHBoxLayout(layoutWidget);
         horizontalLayout_3->setObjectName("horizontalLayout_3");
         horizontalLayout_3->setContentsMargins(0, 0, 0, 0);
-        pushButton_11 = new QPushButton(widget);
+        pushButton_11 = new QPushButton(layoutWidget);
         pushButton_11->setObjectName("pushButton_11");
         pushButton_11->setIcon(icon5);
         pushButton_11->setCheckable(true);

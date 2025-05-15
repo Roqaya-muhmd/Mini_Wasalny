@@ -16,6 +16,14 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+public slots:
+    void on_addg_btn_1_toggled(bool checked);
+    void on_delete_btn_1_toggled(bool checked);
+    void on_addc_btn_1_toggled(bool checked);
+    void on_update_btn_1_toggled(bool checked);
+    void on_upload_btn_1_toggled(bool checked);
+    void on_deleteE_btn_1_toggled(bool checked);
+    void on_showGraph_btn_1_toggled(bool checked);
 
 private:
     Ui::MainWindow *ui;

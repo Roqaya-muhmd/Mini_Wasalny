@@ -439,7 +439,7 @@
        <normaloff>:/icons/activity-feed-16.ico</normaloff>:/icons/activity-feed-16.ico</iconset>
      </property>
     </widget>
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
        <x>0</x>
@@ -495,8 +495,8 @@
    <slot>setVisible(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>221</x>
-     <y>20</y>
+     <x>281</x>
+     <y>19</y>
     </hint>
     <hint type="destinationlabel">
      <x>54</x>
@@ -511,7 +511,7 @@
    <slot>setHidden(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>227</x>
+     <x>281</x>
      <y>19</y>
     </hint>
     <hint type="destinationlabel">
