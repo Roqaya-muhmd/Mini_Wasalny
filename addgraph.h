@@ -14,6 +14,7 @@ class addgraph : public QWidget
 
 public:
     explicit addgraph(QWidget *parent = nullptr);
+    CityGraph getGraph() { return graph; }
     ~addgraph();
 
 private slots:
