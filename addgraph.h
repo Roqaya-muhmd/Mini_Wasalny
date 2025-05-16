@@ -1,6 +1,7 @@
 #ifndef ADDGRAPH_H
 #define ADDGRAPH_H
 
+#include "CityGraph.h"
 #include <QWidget>
 
 namespace Ui {
@@ -20,6 +21,7 @@ private slots:
 
 private:
     Ui::addgraph *ui;
+    CityGraph graph;
 };
 
 #endif // ADDGRAPH_H

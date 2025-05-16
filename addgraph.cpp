@@ -4,10 +4,11 @@
 #include "Qstring"
 addgraph::addgraph(QWidget *parent)
     : QWidget(parent)
-    , ui(new Ui::addgraph)
+    , ui(new Ui::addgraph),
+
 {
     ui->setupUi(this);
-
+    CityGraph graph;
 
 }
 
@@ -23,7 +24,7 @@ void addgraph::on_pushButton_clicked()
         qDebug() << "The graph name is empty";
     }else{
      string graphName=ui->lineEdit_4->text().toStdString();
-     CityGraph graph=CityGraph();
+         graph=CityGraph();
 
          if (ui->lineEdit->text().isEmpty()) {
              // add error label

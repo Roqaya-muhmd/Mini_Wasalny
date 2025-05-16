@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>468</width>
-    <height>344</height>
+    <height>438</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -36,13 +36,13 @@ border-radius: 10px;
       <widget class="QLabel" name="label_4">
        <property name="minimumSize">
         <size>
-         <width>100</width>
+         <width>120</width>
          <height>50</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>100</width>
+         <width>120</width>
          <height>50</height>
         </size>
        </property>
@@ -85,6 +85,44 @@ border-radius: 10px;
 QLineEdit:last-child {
     border-right: 1px solid #ccc; 
 }</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_2">
+       <property name="minimumSize">
+        <size>
+         <width>100</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>100</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+background-color:  #C1FFC1;
+		border:none;
+		border-radius: 3px;
+		text-align: left;
+		padding: 8px 0 8px 15px;
+		color: #788596;
+    font-family: &quot;Segoe UI&quot;, &quot;Arial&quot;, &quot;Helvetica Neue&quot;, sans-serif;
+border-radius: 10px;
+
+	}
+QPushButton:hover {
+		background-color: rgba( 86, 101, 115, 0.5);
+	}
+ QPushButton:checked {
+		color: #fff;
+	}</string>
+       </property>
+       <property name="text">
+        <string>PushButton</string>
        </property>
       </widget>
      </item>
@@ -230,7 +268,7 @@ QLineEdit:last-child {
        </property>
       </widget>
      </item>
-     <item alignment="Qt::AlignmentFlag::AlignHCenter">
+     <item>
       <widget class="QPushButton" name="pushButton">
        <property name="minimumSize">
         <size>
