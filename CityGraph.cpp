@@ -68,7 +68,7 @@ void CityGraph::setAdjacencyList(unordered_map<string, vector<pair<string, int>>
 void CityGraph::setedgeList(unordered_map<pair<string, string>, int, pair_hash>edgeL) {
     edgeList = edgeL;
 }
-
+void CityGraph::addEdge(string c1, string c2){}
 string CityGraph::addEdge(string c1, string c2,int weight)
 {
 

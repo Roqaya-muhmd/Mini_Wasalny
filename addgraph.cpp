@@ -29,22 +29,28 @@ void addgraph::on_pushButton_clicked()
              // add error label
              qDebug() << "The city1 is empty";}
          else{
+
              string c1=ui->lineEdit->text().toStdString();
-             string message1=graph.addCity(c1);
+             QString message1=QString::fromStdString(graph.addCity(c1));
+              ui->label_4->setText(message1);
 
              if (ui->lineEdit_2->text().isEmpty()) {
                  // add error label
                  qDebug() << "The city2 is empty";}
              else{
                  string c2=ui->lineEdit_2->text().toStdString();
-                 string message2=graph.addCity(c2);
+
+                 QString message2=QString::fromStdString(graph.addCity(c2));
+                    ui->label_2->setText(message2);
 
                  if (ui->lineEdit_3->text().isEmpty()){
                      qDebug() << "The no edge added";
                  }else{
                     int e1=ui->lineEdit_2->text().trimmed().toInt();
-                     string message3=graph.addEdge(c1,c2,e1);
+                     QString message3=QString::fromStdString(graph.addEdge(c1,c2,e1));
+                     ui->label_3->setText(message3);
                  }
+
 
              }
 
