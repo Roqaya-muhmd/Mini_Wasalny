@@ -52,6 +52,10 @@ CityGraph::CityGraph(int n, int m)
         addEdge(c1, c2);
     }
 }
+CityGraph::CityGraph(){
+    this->CitiesNum =0;
+
+}
 
 CityGraph::CityGraph(unordered_map<string, vector<pair<string, int>>> adjacencyList, unordered_map<pair<string, string>, int, pair_hash>edgeL) {
     setAdjacencyList(adjacencyList);
@@ -65,25 +69,36 @@ void CityGraph::setedgeList(unordered_map<pair<string, string>, int, pair_hash>e
     edgeList = edgeL;
 }
 
-void CityGraph::addEdge(string c1, string c2)
+string CityGraph::addEdge(string c1, string c2,int weight)
 {
-    bool accepted = false;
-    while (!accepted) {
-        int weight;
-        cout << "please enter weight between them\n";
-        cin >> weight;
+
         if (weight < 0) {
-            cout << "Error: Weight must be non-negative.Try again\n";
-            continue;
+            return "Error: Weight must be non-negative.Try again\n";
+
+        }
+        if (!cityFound(c1)) {
+            return "Error: City '"+ c1 + "' doesn't exist!.Try adding it first\n";
         }
 
+        if (edgeFound(c1, c2)) {
+            return "Error: Edge already exists between "+ c1+ " and "+ c2 + ".delete the edge first\n";
+
+        }
+        if (c1 == c2) {
+            return "Error: Cannot connect a city to itself.Try again\n";
+
+        }
+        if (!cityFound(c2)) {
+            return "Error: City '" + c2 + "' doesn't exist!.Try adding it first\n";
+
+        }
 
         adjacencyList[c1].push_back({ c2,weight });
         adjacencyList[c2].push_back({ c1,weight }); //this is undirected assuming that el taree2 raye7 gai
         edgeList[{c1, c2}] = weight;
         edgeList[{c2, c1}] = weight;
-        accepted = true;
-    }
+        return "edge added successfully";
+
 }
 
 
@@ -99,46 +114,45 @@ void CityGraph::addEdge()
 
 
 
-void CityGraph::addCity(int number)
+string CityGraph::addCity(string c1)
 {
-    for (int i = 0; i < number; i++)
-    {
+
         bool check = false;
-        string c1;
+    string message;
         char agree;
-        cout << "please insert city " << i + 1 << '\n';
-        cin >> c1;
         if (cityFound(c1)) {
-            cout << "City already exist! try again" << endl;
-            i--;
-            continue;
+            message= "City already exist! try again";
+            return message;
         }
         adjacencyList[c1] = {};
-
-        cout << "do you wish to connect it to other cities now? y/n";
-        cin >> agree;
-
-        while (tolower(agree) == 'y') {
-            string c2;
-            int weight;
-            cout << "please insert city 2\n";
-            cin >> c2;
-
-            if (!cityFound(c2)) {
-                cout << "Error: City '" << c2 << "' doesn't exist!\n";
-                continue;
-            }
-            if (c1 == c2) {
-                cout << "Error : You can't connect a city to itself!\n";
-            }
-            addEdge(c1, c2);
-            cout << "Added connection between " << c1 << " and " << c2 << "\n";
-            cout << "Add another connection? (y/n): ";
-            cin >> agree;
-        }
-
-    }
+        message="city added";
+        return message;
 }
+
+//         cout << "do you wish to connect it to other cities now? y/n";
+//         cin >> agree;
+
+//         while (tolower(agree) == 'y') {
+//             string c2;
+//             int weight;
+//             cout << "please insert city 2\n";
+//             cin >> c2;
+
+//             if (!cityFound(c2)) {
+//                 cout << "Error: City '" << c2 << "' doesn't exist!\n";
+//                 continue;
+//             }
+//             if (c1 == c2) {
+//                 cout << "Error : You can't connect a city to itself!\n";
+//             }
+//             addEdge(c1, c2);
+//             cout << "Added connection between " << c1 << " and " << c2 << "\n";
+//             cout << "Add another connection? (y/n): ";
+//             cin >> agree;
+//         }
+
+
+// }
 
 void CityGraph::deleteCity(string& c1) {
 

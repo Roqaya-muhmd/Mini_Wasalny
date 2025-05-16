@@ -25,12 +25,15 @@ class CityGraph
 
 public:
     CityGraph(int n, int m);
+    CityGraph();
     CityGraph(unordered_map<string, vector<pair<string, int>>> adjacencyList, unordered_map<pair<string, string>, int, pair_hash> edgeLst);
     void setAdjacencyList(unordered_map<string, vector<pair<string, int>>> adj);
     void setedgeList(unordered_map<pair<string, string>, int, pair_hash>edgeL);
     void addEdge(string c1, string c2);
+   string addEdge(string c1, string c2,int);
     void addEdge();
     void addCity(int number = 1);
+    string addCity(string);
     void deleteEdge(string c1, string c2);
     void deleteCity(string& c1);
     void printGraph();

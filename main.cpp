@@ -1,3 +1,4 @@
+#include "addgraph.h"
 #include "mainwindow.h"
 
 #include <QApplication>
@@ -8,7 +9,7 @@ int main(int argc, char *argv[])
 
 
     // OR apply to specific window
-    MainWindow w;
+   addgraph w;
     w.show();
 
 
