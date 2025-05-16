@@ -1,0 +1,28 @@
+#include "deleteedge.h"
+#include "ui_deleteedge.h"
+#include "CityGraph.h"
+
+
+DeleteEdge::DeleteEdge(QWidget *parent)
+    : QWidget(parent)
+    , ui(new Ui::DeleteEdge)
+{
+    ui->setupUi(this);
+}
+
+DeleteEdge::~DeleteEdge()
+{
+    delete ui;
+}
+
+
+QString deletedFirstCity;
+
+CityGraph tempGraph(2,3);   // replace with the user's graph
+
+
+void DeleteEdge::on_deleteEdgeConfirmButton_clicked()
+{
+    
+}
+
