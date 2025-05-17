@@ -15,6 +15,9 @@ public:
     explicit DeleteEdge(QWidget *parent = nullptr);
     ~DeleteEdge();
 
+private slots:
+    void on_deleteEdgeConfirmButton_clicked();
+
 private:
     Ui::DeleteEdge *ui;
 };

@@ -15,6 +15,9 @@ public:
     explicit DeleteCity(QWidget *parent = nullptr);
     ~DeleteCity();
 
+private slots:
+    void on_deleteCityConfirmButton_clicked(bool checked);
+
 private:
     Ui::DeleteCity *ui;
 };

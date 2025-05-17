@@ -27,10 +27,13 @@ public:
     QGridLayout *gridLayout;
     QVBoxLayout *verticalLayout;
     QLabel *deleteEdgeFirstCityNameLabel;
+    QLabel *cityone_warning;
     QLineEdit *deleteEdgeFirstCityNameLineEdit;
     QLabel *deleteEdgeSecondCityNameLabel;
+    QLabel *citytwo_warning;
     QLineEdit *deleteEdgeSecondCityNameLineEdit;
     QLabel *deleteEdgeWeightLabel;
+    QLabel *edge_warning;
     QLineEdit *deleteEdgeWeightLineEdit;
     QPushButton *deleteEdgeConfirmButton;
     QLabel *label;
@@ -39,7 +42,7 @@ public:
     {
         if (DeleteEdge->objectName().isEmpty())
             DeleteEdge->setObjectName("DeleteEdge");
-        DeleteEdge->resize(468, 344);
+        DeleteEdge->resize(482, 344);
         DeleteEdge->setStyleSheet(QString::fromUtf8("QWidget {\n"
 "         background-image: url(C:\\Users\\PC\\OneDrive\\Documenti\\Mini_Wasalny\\map.jpg);\n"
 "         background-position: center;\n"
@@ -76,6 +79,13 @@ public:
         deleteEdgeFirstCityNameLabel->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         verticalLayout->addWidget(deleteEdgeFirstCityNameLabel, 0, Qt::AlignmentFlag::AlignHCenter);
+
+        cityone_warning = new QLabel(DeleteEdge);
+        cityone_warning->setObjectName("cityone_warning");
+        cityone_warning->setMinimumSize(QSize(120, 25));
+        cityone_warning->setMaximumSize(QSize(120, 25));
+
+        verticalLayout->addWidget(cityone_warning, 0, Qt::AlignmentFlag::AlignHCenter);
 
         deleteEdgeFirstCityNameLineEdit = new QLineEdit(DeleteEdge);
         deleteEdgeFirstCityNameLineEdit->setObjectName("deleteEdgeFirstCityNameLineEdit");
@@ -191,6 +201,13 @@ public:
 
         verticalLayout->addWidget(deleteEdgeSecondCityNameLabel, 0, Qt::AlignmentFlag::AlignHCenter);
 
+        citytwo_warning = new QLabel(DeleteEdge);
+        citytwo_warning->setObjectName("citytwo_warning");
+        citytwo_warning->setMinimumSize(QSize(120, 25));
+        citytwo_warning->setMaximumSize(QSize(120, 25));
+
+        verticalLayout->addWidget(citytwo_warning, 0, Qt::AlignmentFlag::AlignHCenter);
+
         deleteEdgeSecondCityNameLineEdit = new QLineEdit(DeleteEdge);
         deleteEdgeSecondCityNameLineEdit->setObjectName("deleteEdgeSecondCityNameLineEdit");
         deleteEdgeSecondCityNameLineEdit->setMinimumSize(QSize(200, 30));
@@ -291,6 +308,13 @@ public:
         deleteEdgeWeightLabel->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         verticalLayout->addWidget(deleteEdgeWeightLabel, 0, Qt::AlignmentFlag::AlignHCenter);
+
+        edge_warning = new QLabel(DeleteEdge);
+        edge_warning->setObjectName("edge_warning");
+        edge_warning->setMinimumSize(QSize(120, 25));
+        edge_warning->setMaximumSize(QSize(120, 25));
+
+        verticalLayout->addWidget(edge_warning, 0, Qt::AlignmentFlag::AlignHCenter);
 
         deleteEdgeWeightLineEdit = new QLineEdit(DeleteEdge);
         deleteEdgeWeightLineEdit->setObjectName("deleteEdgeWeightLineEdit");
@@ -501,8 +525,11 @@ public:
     {
         DeleteEdge->setWindowTitle(QCoreApplication::translate("DeleteEdge", "Form", nullptr));
         deleteEdgeFirstCityNameLabel->setText(QCoreApplication::translate("DeleteEdge", "   \330\247\330\263\331\205 \330\247\331\204\331\205\330\257\331\212\331\206\330\251 \330\247\331\204\330\247\331\210\331\204\331\211", nullptr));
+        cityone_warning->setText(QString());
         deleteEdgeSecondCityNameLabel->setText(QCoreApplication::translate("DeleteEdge", "   \330\247\330\263\331\205 \330\247\331\204\331\205\330\257\331\212\331\206\330\251 \330\247\331\204\330\253\330\247\331\206\331\212\330\251", nullptr));
+        citytwo_warning->setText(QString());
         deleteEdgeWeightLabel->setText(QCoreApplication::translate("DeleteEdge", "   \330\252\331\203\331\204\331\201\330\251 \330\247\331\204\330\267\330\261\331\212\331\202", nullptr));
+        edge_warning->setText(QString());
         deleteEdgeConfirmButton->setText(QCoreApplication::translate("DeleteEdge", "\330\255\330\260\331\201", nullptr));
         label->setText(QString());
     } // retranslateUi

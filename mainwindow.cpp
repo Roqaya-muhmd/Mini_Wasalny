@@ -14,8 +14,7 @@ MainWindow::MainWindow(QWidget *parent)
             this, &MainWindow::on_addc_btn_1_toggled);
     connect(ui->update_btn_2, &QPushButton::toggled,
             this, &MainWindow::on_update_btn_1_toggled);
-    connect(ui->upload_btn_2, &QPushButton::toggled,
-            this, &MainWindow::on_upload_btn_1_toggled);
+
     connect(ui->deleteE_btn1, &QPushButton::toggled,
             this, &MainWindow::on_deleteE_btn_1_toggled);
     connect(ui->show_btn1, &QPushButton::toggled,
@@ -23,6 +22,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->icon_only_widget->hide();
     ui->stackedWidget->setCurrentIndex(0);
     ui->addg_btn_2->setChecked(true);
+
 
 
 }

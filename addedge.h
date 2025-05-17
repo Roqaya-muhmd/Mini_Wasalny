@@ -14,6 +14,9 @@ class AddEdge : public QWidget
 public:
     explicit AddEdge(QWidget *parent = nullptr);
     ~AddEdge();
+private slots:
+    void on_addEdgeConfirmButton_clicked(bool checked);
+
 
 private:
     Ui::AddEdge *ui;

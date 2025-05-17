@@ -61,10 +61,6 @@ public:
     QWidget *page_7;
     QGridLayout *gridLayout_8;
     QLabel *label_10;
-    QWidget *page_8;
-    QLabel *label;
-    QWidget *page_9;
-    QLabel *label_2;
     QWidget *icon_only_widget;
     QVBoxLayout *verticalLayout_3;
     QHBoxLayout *horizontalLayout_3;
@@ -74,7 +70,6 @@ public:
     QPushButton *delete_btn_1;
     QPushButton *addc_btn_1;
     QPushButton *update_btn_1;
-    QPushButton *upload_btn_1;
     QPushButton *deleteE_btn2;
     QPushButton *show_btn2;
     QSpacerItem *verticalSpacer;
@@ -89,7 +84,6 @@ public:
     QPushButton *delete_btn_2;
     QPushButton *addc_btn_2;
     QPushButton *update_btn_2;
-    QPushButton *upload_btn_2;
     QPushButton *deleteE_btn1;
     QPushButton *show_btn1;
     QSpacerItem *verticalSpacer_2;
@@ -228,18 +222,6 @@ public:
         gridLayout_8->addWidget(label_10, 0, 0, 1, 1);
 
         stackedWidget->addWidget(page_7);
-        page_8 = new QWidget();
-        page_8->setObjectName("page_8");
-        label = new QLabel(page_8);
-        label->setObjectName("label");
-        label->setGeometry(QRect(220, 120, 37, 16));
-        stackedWidget->addWidget(page_8);
-        page_9 = new QWidget();
-        page_9->setObjectName("page_9");
-        label_2 = new QLabel(page_9);
-        label_2->setObjectName("label_2");
-        label_2->setGeometry(QRect(300, 140, 37, 12));
-        stackedWidget->addWidget(page_9);
 
         verticalLayout_5->addWidget(stackedWidget);
 
@@ -330,22 +312,11 @@ public:
 
         verticalLayout->addWidget(update_btn_1);
 
-        upload_btn_1 = new QPushButton(icon_only_widget);
-        upload_btn_1->setObjectName("upload_btn_1");
-        QIcon icon7;
-        icon7.addFile(QString::fromUtf8(":/icons/upload-16.ico"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
-        upload_btn_1->setIcon(icon7);
-        upload_btn_1->setIconSize(QSize(14, 14));
-        upload_btn_1->setCheckable(true);
-        upload_btn_1->setAutoExclusive(true);
-
-        verticalLayout->addWidget(upload_btn_1);
-
         deleteE_btn2 = new QPushButton(icon_only_widget);
         deleteE_btn2->setObjectName("deleteE_btn2");
-        QIcon icon8;
-        icon8.addFile(QString::fromUtf8(":/icons/road-2-16.ico"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
-        deleteE_btn2->setIcon(icon8);
+        QIcon icon7;
+        icon7.addFile(QString::fromUtf8(":/icons/road-2-16.ico"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
+        deleteE_btn2->setIcon(icon7);
         deleteE_btn2->setCheckable(true);
         deleteE_btn2->setAutoExclusive(true);
 
@@ -353,9 +324,9 @@ public:
 
         show_btn2 = new QPushButton(icon_only_widget);
         show_btn2->setObjectName("show_btn2");
-        QIcon icon9;
-        icon9.addFile(QString::fromUtf8(":/icons/mind-map-16.ico"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
-        show_btn2->setIcon(icon9);
+        QIcon icon8;
+        icon8.addFile(QString::fromUtf8(":/icons/mind-map-16.ico"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
+        show_btn2->setIcon(icon8);
         show_btn2->setCheckable(true);
         show_btn2->setAutoExclusive(true);
 
@@ -370,9 +341,9 @@ public:
 
         exit_btn_1 = new QPushButton(icon_only_widget);
         exit_btn_1->setObjectName("exit_btn_1");
-        QIcon icon10;
-        icon10.addFile(QString::fromUtf8(":/icons/cancel-16.ico"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
-        exit_btn_1->setIcon(icon10);
+        QIcon icon9;
+        icon9.addFile(QString::fromUtf8(":/icons/cancel-16.ico"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
+        exit_btn_1->setIcon(icon9);
         exit_btn_1->setIconSize(QSize(14, 14));
 
         verticalLayout_3->addWidget(exit_btn_1);
@@ -478,15 +449,6 @@ public:
 
         verticalLayout_2->addWidget(update_btn_2);
 
-        upload_btn_2 = new QPushButton(full_menu_widget);
-        upload_btn_2->setObjectName("upload_btn_2");
-        upload_btn_2->setIcon(icon7);
-        upload_btn_2->setIconSize(QSize(14, 14));
-        upload_btn_2->setCheckable(true);
-        upload_btn_2->setAutoExclusive(true);
-
-        verticalLayout_2->addWidget(upload_btn_2);
-
         deleteE_btn1 = new QPushButton(full_menu_widget);
         deleteE_btn1->setObjectName("deleteE_btn1");
         deleteE_btn1->setIcon(icon4);
@@ -497,7 +459,7 @@ public:
 
         show_btn1 = new QPushButton(full_menu_widget);
         show_btn1->setObjectName("show_btn1");
-        show_btn1->setIcon(icon9);
+        show_btn1->setIcon(icon8);
         show_btn1->setCheckable(true);
         show_btn1->setAutoExclusive(true);
 
@@ -512,7 +474,7 @@ public:
 
         exit_btn_2 = new QPushButton(full_menu_widget);
         exit_btn_2->setObjectName("exit_btn_2");
-        exit_btn_2->setIcon(icon10);
+        exit_btn_2->setIcon(icon9);
         exit_btn_2->setIconSize(QSize(14, 14));
 
         verticalLayout_4->addWidget(exit_btn_2);
@@ -527,7 +489,6 @@ public:
         QObject::connect(change_btn, &QPushButton::toggled, icon_only_widget, &QWidget::setVisible);
         QObject::connect(addg_btn_2, &QPushButton::toggled, addg_btn_1, &QPushButton::setChecked);
         QObject::connect(delete_btn_2, &QPushButton::toggled, delete_btn_1, &QPushButton::setChecked);
-        QObject::connect(upload_btn_1, &QPushButton::toggled, upload_btn_2, &QPushButton::setChecked);
         QObject::connect(change_btn, &QPushButton::toggled, full_menu_widget, &QWidget::setHidden);
         QObject::connect(exit_btn_2, &QPushButton::clicked, MainWindow, qOverload<>(&QMainWindow::close));
         QObject::connect(update_btn_1, &QPushButton::toggled, update_btn_2, &QPushButton::setChecked);
@@ -536,13 +497,12 @@ public:
         QObject::connect(addc_btn_1, &QPushButton::toggled, addc_btn_2, &QPushButton::setChecked);
         QObject::connect(addc_btn_2, &QPushButton::toggled, addc_btn_1, &QPushButton::setChecked);
         QObject::connect(update_btn_2, &QPushButton::toggled, update_btn_1, &QPushButton::setChecked);
-        QObject::connect(upload_btn_2, &QPushButton::toggled, upload_btn_1, &QPushButton::setChecked);
         QObject::connect(deleteE_btn1, &QPushButton::toggled, deleteE_btn2, &QPushButton::setChecked);
         QObject::connect(deleteE_btn2, &QPushButton::toggled, deleteE_btn1, &QPushButton::setChecked);
         QObject::connect(show_btn2, &QPushButton::toggled, show_btn1, &QPushButton::setChecked);
         QObject::connect(show_btn1, &QPushButton::toggled, show_btn2, &QPushButton::setChecked);
 
-        stackedWidget->setCurrentIndex(0);
+        stackedWidget->setCurrentIndex(6);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -556,14 +516,11 @@ public:
         user_btn->setText(QString());
         label_8->setText(QCoreApplication::translate("MainWindow", "Customers Page", nullptr));
         label_10->setText(QCoreApplication::translate("MainWindow", "User Page", nullptr));
-        label->setText(QCoreApplication::translate("MainWindow", "page 8", nullptr));
-        label_2->setText(QCoreApplication::translate("MainWindow", "page 9", nullptr));
         logo_label_1->setText(QString());
         addg_btn_1->setText(QString());
         delete_btn_1->setText(QString());
         addc_btn_1->setText(QString());
         update_btn_1->setText(QString());
-        upload_btn_1->setText(QString());
         deleteE_btn2->setText(QString());
         show_btn2->setText(QString());
         exit_btn_1->setText(QString());
@@ -573,7 +530,6 @@ public:
         delete_btn_2->setText(QCoreApplication::translate("MainWindow", "\330\243\330\255\330\260\331\201 \330\247\331\204\331\205\330\257\331\206\331\212\330\251", nullptr));
         addc_btn_2->setText(QCoreApplication::translate("MainWindow", "\330\243\330\266\331\212\331\201 \331\205\330\257\331\206\331\212\330\251", nullptr));
         update_btn_2->setText(QCoreApplication::translate("MainWindow", "\330\271\330\257\331\204 \330\247\331\204\330\267\330\261\331\212\331\202", nullptr));
-        upload_btn_2->setText(QCoreApplication::translate("MainWindow", "\330\243\330\261\331\201\330\271 \330\247\331\204\331\205\330\257\331\206", nullptr));
         deleteE_btn1->setText(QCoreApplication::translate("MainWindow", "\330\243\330\255\330\260\331\201 \330\267\330\261\331\212\331\202", nullptr));
         show_btn1->setText(QCoreApplication::translate("MainWindow", "Show Graph", nullptr));
         exit_btn_2->setText(QCoreApplication::translate("MainWindow", "Exit", nullptr));

@@ -21,7 +21,8 @@ SOURCES += \
     deletecity.cpp \
     deleteedge.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    showgraph.cpp
 
 HEADERS += \
     AStar.h \
@@ -35,7 +36,8 @@ HEADERS += \
     addgraph.h \
     deletecity.h \
     deleteedge.h \
-    mainwindow.h
+    mainwindow.h \
+    showgraph.h
 
 FORMS += \
     addcity.ui \
@@ -44,7 +46,8 @@ FORMS += \
     deletecity.ui \
     deleteedge.ui \
     mainwindow.ui \
-    mainwindow1.ui
+    mainwindow1.ui \
+    showgraph.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

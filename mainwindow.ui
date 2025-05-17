@@ -173,7 +173,7 @@
        <item>
         <widget class="QStackedWidget" name="stackedWidget">
          <property name="currentIndex">
-          <number>0</number>
+          <number>6</number>
          </property>
          <widget class="addgraph" name="page">
           <layout class="QGridLayout" name="gridLayout_2"/>
@@ -230,36 +230,6 @@
             </widget>
            </item>
           </layout>
-         </widget>
-         <widget class="QWidget" name="page_8">
-          <widget class="QLabel" name="label">
-           <property name="geometry">
-            <rect>
-             <x>220</x>
-             <y>120</y>
-             <width>37</width>
-             <height>16</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>page 8</string>
-           </property>
-          </widget>
-         </widget>
-         <widget class="QWidget" name="page_9">
-          <widget class="QLabel" name="label_2">
-           <property name="geometry">
-            <rect>
-             <x>300</x>
-             <y>140</y>
-             <width>37</width>
-             <height>12</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>page 9</string>
-           </property>
-          </widget>
          </widget>
         </widget>
        </item>
@@ -414,29 +384,6 @@
            <property name="icon">
             <iconset resource="myres.qrc">
              <normaloff>:/icons/available-updates-16.ico</normaloff>:/icons/available-updates-16.ico</iconset>
-           </property>
-           <property name="iconSize">
-            <size>
-             <width>14</width>
-             <height>14</height>
-            </size>
-           </property>
-           <property name="checkable">
-            <bool>true</bool>
-           </property>
-           <property name="autoExclusive">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="upload_btn_1">
-           <property name="text">
-            <string/>
-           </property>
-           <property name="icon">
-            <iconset resource="myres.qrc">
-             <normaloff>:/icons/upload-16.ico</normaloff>:/icons/upload-16.ico</iconset>
            </property>
            <property name="iconSize">
             <size>
@@ -700,29 +647,6 @@
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="upload_btn_2">
-           <property name="text">
-            <string>أرفع المدن</string>
-           </property>
-           <property name="icon">
-            <iconset resource="myres.qrc">
-             <normaloff>:/icons/upload-16.ico</normaloff>:/icons/upload-16.ico</iconset>
-           </property>
-           <property name="iconSize">
-            <size>
-             <width>14</width>
-             <height>14</height>
-            </size>
-           </property>
-           <property name="checkable">
-            <bool>true</bool>
-           </property>
-           <property name="autoExclusive">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item>
           <widget class="QPushButton" name="deleteE_btn1">
            <property name="text">
             <string>أحذف طريق</string>
@@ -895,22 +819,6 @@
    </hints>
   </connection>
   <connection>
-   <sender>upload_btn_1</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>upload_btn_2</receiver>
-   <slot>setChecked(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>35</x>
-     <y>202</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>161</x>
-     <y>202</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
    <sender>change_btn</sender>
    <signal>toggled(bool)</signal>
    <receiver>full_menu_widget</receiver>
@@ -1035,22 +943,6 @@
     <hint type="destinationlabel">
      <x>45</x>
      <y>172</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>upload_btn_2</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>upload_btn_1</receiver>
-   <slot>setChecked(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>161</x>
-     <y>202</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>41</x>
-     <y>202</y>
     </hint>
    </hints>
   </connection>

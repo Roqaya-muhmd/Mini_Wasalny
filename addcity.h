@@ -14,6 +14,8 @@ class AddCity : public QWidget
 public:
     explicit AddCity(QWidget *parent = nullptr);
     ~AddCity();
+private slots:
+    void on_addCityConfirmButton_clicked(bool checked);
 
 private:
     Ui::AddCity *ui;

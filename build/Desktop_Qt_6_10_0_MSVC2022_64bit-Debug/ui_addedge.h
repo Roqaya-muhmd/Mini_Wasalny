@@ -27,10 +27,13 @@ public:
     QGridLayout *gridLayout;
     QVBoxLayout *verticalLayout;
     QLabel *addEdgeFirstCityNameLabel;
+    QLabel *city1NameNotFound;
     QLineEdit *addEdgeFirstCityNameLineEdit;
     QLabel *addEdgeSecondCityNameLabel;
+    QLabel *city2NameNotFound;
     QLineEdit *addEdgeSecondCityNameLineEdit;
     QLabel *addEdgeWeightLabel;
+    QLabel *edgeNameNotFound;
     QLineEdit *addEdgeWeightLineEdit;
     QPushButton *addEdgeConfirmButton;
     QLabel *label;
@@ -39,7 +42,7 @@ public:
     {
         if (AddEdge->objectName().isEmpty())
             AddEdge->setObjectName("AddEdge");
-        AddEdge->resize(468, 344);
+        AddEdge->resize(482, 344);
         gridLayout = new QGridLayout(AddEdge);
         gridLayout->setObjectName("gridLayout");
         verticalLayout = new QVBoxLayout();
@@ -70,6 +73,13 @@ public:
         addEdgeFirstCityNameLabel->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         verticalLayout->addWidget(addEdgeFirstCityNameLabel, 0, Qt::AlignmentFlag::AlignHCenter);
+
+        city1NameNotFound = new QLabel(AddEdge);
+        city1NameNotFound->setObjectName("city1NameNotFound");
+        city1NameNotFound->setMinimumSize(QSize(120, 25));
+        city1NameNotFound->setMaximumSize(QSize(110, 15));
+
+        verticalLayout->addWidget(city1NameNotFound, 0, Qt::AlignmentFlag::AlignHCenter);
 
         addEdgeFirstCityNameLineEdit = new QLineEdit(AddEdge);
         addEdgeFirstCityNameLineEdit->setObjectName("addEdgeFirstCityNameLineEdit");
@@ -185,6 +195,13 @@ public:
 
         verticalLayout->addWidget(addEdgeSecondCityNameLabel, 0, Qt::AlignmentFlag::AlignHCenter);
 
+        city2NameNotFound = new QLabel(AddEdge);
+        city2NameNotFound->setObjectName("city2NameNotFound");
+        city2NameNotFound->setMinimumSize(QSize(120, 25));
+        city2NameNotFound->setMaximumSize(QSize(120, 25));
+
+        verticalLayout->addWidget(city2NameNotFound, 0, Qt::AlignmentFlag::AlignHCenter);
+
         addEdgeSecondCityNameLineEdit = new QLineEdit(AddEdge);
         addEdgeSecondCityNameLineEdit->setObjectName("addEdgeSecondCityNameLineEdit");
         addEdgeSecondCityNameLineEdit->setMinimumSize(QSize(200, 30));
@@ -285,6 +302,13 @@ public:
         addEdgeWeightLabel->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
         verticalLayout->addWidget(addEdgeWeightLabel, 0, Qt::AlignmentFlag::AlignHCenter);
+
+        edgeNameNotFound = new QLabel(AddEdge);
+        edgeNameNotFound->setObjectName("edgeNameNotFound");
+        edgeNameNotFound->setMinimumSize(QSize(120, 25));
+        edgeNameNotFound->setMaximumSize(QSize(120, 25));
+
+        verticalLayout->addWidget(edgeNameNotFound, 0, Qt::AlignmentFlag::AlignHCenter);
 
         addEdgeWeightLineEdit = new QLineEdit(AddEdge);
         addEdgeWeightLineEdit->setObjectName("addEdgeWeightLineEdit");
@@ -497,8 +521,11 @@ public:
     {
         AddEdge->setWindowTitle(QCoreApplication::translate("AddEdge", "Form", nullptr));
         addEdgeFirstCityNameLabel->setText(QCoreApplication::translate("AddEdge", "   \330\247\330\263\331\205 \330\247\331\204\331\205\330\257\331\212\331\206\330\251 \330\247\331\204\330\247\331\210\331\204\331\211", nullptr));
+        city1NameNotFound->setText(QString());
         addEdgeSecondCityNameLabel->setText(QCoreApplication::translate("AddEdge", "   \330\247\330\263\331\205 \330\247\331\204\331\205\330\257\331\212\331\206\330\251 \330\247\331\204\330\253\330\247\331\206\331\212\330\251", nullptr));
+        city2NameNotFound->setText(QString());
         addEdgeWeightLabel->setText(QCoreApplication::translate("AddEdge", "   \330\252\331\203\331\204\331\201\330\251 \330\247\331\204\330\267\330\261\331\212\331\202", nullptr));
+        edgeNameNotFound->setText(QString());
         addEdgeConfirmButton->setText(QCoreApplication::translate("AddEdge", "\330\245\330\266\330\247\331\201\330\251", nullptr));
         label->setText(QString());
     } // retranslateUi
