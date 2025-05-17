@@ -1,0 +1,23 @@
+# Qt build directories
+build*/
+build-*/
+Debug/
+Release/
+*.pro.user
+*.autosave
+
+# Debug files (PDB, OBJ, etc.)
+*.pdb
+*.ilk
+*.idb
+*.obj
+*.exe
+*.dll
+*.lib
+*.exp
+*.suo
+*.sdf
+*.aps
+*.ncb
+*.opendb
+*.VC.db
