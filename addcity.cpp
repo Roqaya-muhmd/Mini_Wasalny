@@ -3,6 +3,7 @@
 #include <QGridLayout>  // For QGridLayout
 #include "string"
 #include "addgraph.h"
+#include "File.h"
 AddCity::AddCity(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::AddCity)

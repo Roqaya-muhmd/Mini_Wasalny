@@ -11,7 +11,7 @@
 class File {
 
 public:
-	void loadAllGraphs(const string& filename, unordered_map<string, unordered_map<string, vector<pair<string, int>>>>& allGraphs, unordered_map<string, unordered_map<pair<string, string>, int, pair_hash>>& edgeLists);
+    string loadAllGraphs(const string& filename, unordered_map<string, CityGraph>& allGraphs);
 	void saveGraphToFile(const string& filename, const string& graphName, const unordered_map<string, vector<pair<string, int>>>& adjList);
 	string chooseGraph(const unordered_map<string, unordered_map<string, vector<pair<string, int>>>>& allGraphs);
 	static void trim(string& s);
@@ -19,4 +19,5 @@ public:
 	void appendEditedGraphToFile(const string& name, const unordered_map<string, vector<pair<string, int>>>& adjList, const string& filename);
 	void exportToDOT(const string& filename, const string& graphName, const unordered_map<string, vector<pair<string, int>>>& adjacencyList);
 
+    string saveAllGraphs(const string &filename, unordered_map<string, CityGraph> &allGraphs);
 };

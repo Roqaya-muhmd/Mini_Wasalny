@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>482</width>
-    <height>344</height>
+    <width>488</width>
+    <height>425</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -1140,7 +1140,7 @@ border-radius: 10px;
        <property name="styleSheet">
         <string notr="true">QLineEdit {
     border: 1px solid #ccc;       /* Border color */
-     
+	color: rgb(0, 0, 0);
     padding: 5px;
     margin: 0;                    /* Remove default margin */
 }

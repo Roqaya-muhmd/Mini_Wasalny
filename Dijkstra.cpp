@@ -62,7 +62,7 @@ stack<string> Dijkstra::checkPath(unordered_map<string, string>par, string src, 
 	out.push(dis);
 	string part = par[dis];
 
-	while (!part._Equal(src)) {
+    while (part!=src) {
 		if (part == "city") return {};
 		out.push(part);
 		part = par[part];

@@ -3,8 +3,13 @@
 #include "CityGraph.h"
 #include "Qstring"
 using namespace std;
+
 #include "iostream"
- CityGraph addgraph::graph ;
+
+#include <QFileInfo>
+CityGraph addgraph::graph ;
+string addgraph::graphName;
+unordered_map<string, CityGraph> addgraph::graphCollec;
 
 addgraph::addgraph(QWidget *parent)
     : QWidget(parent)
@@ -20,6 +25,7 @@ addgraph::addgraph(QWidget *parent)
             this,&addgraph::on_pushButton_clicked);
     connect(ui->pushButton_2, &QPushButton::toggled,
             this,&addgraph::on_pushButton_2_clicked);
+
 
 }
 
@@ -81,7 +87,7 @@ void addgraph::on_pushButton_clicked()
             }
 
 
-
+           //file.saveGraphToFile("savedData.txt", graphName, graph.getAdjacencyList());
 
         }
         ui->lineEdit->clear();
@@ -90,8 +96,38 @@ void addgraph::on_pushButton_clicked()
         ui->lineEdit_4->clear();
       // qDebug() << "City found:" << graph.cityFound("cairo");
 
+        for ( auto& [graphName, cityGraph] : graphCollec) {
+            const auto& adjList = cityGraph.getAdjacencyList();
+
+            // Graph header
+            qDebug().noquote() << QString("\nGraph: %1 (Cities: %2)")
+                                      .arg(QString::fromStdString(graphName))
+                                      .arg(adjList.size());
+            qDebug() << QString(50, '-');
+
+            // Print cities and connections
+            for (const auto& [city, neighbors] : adjList) {
+                QString connections;
+                if (neighbors.empty()) {
+                    connections = "[No connections]";
+                } else {
+                    for (size_t i = 0; i < neighbors.size(); ++i) {
+                        if (i > 0) connections += ", ";
+                        connections += QString("%1 (%2)")
+                                           .arg(QString::fromStdString(neighbors[i].first))
+                                           .arg(neighbors[i].second);
+                    }
+                }
+
+                qDebug().noquote() << QString("• %1 → %2")
+                                          .arg(QString::fromStdString(city).leftJustified(15, ' '))
+                                          .arg(connections);
+            }
+        }
+
 
     }
+
 
 }
 
@@ -101,27 +137,35 @@ void addgraph::on_pushButton_2_clicked()
     if (ui->lineEdit_4->text().isEmpty()) {
         waringlab(ui->label_warning,"The graph name is empty");
         qDebug() << "The graph name is empty";
-        return;
-    }else{
+        return;}
+
         ui->label_warning->hide();
-        QString graphName = ui->lineEdit_4->text();
-        auto it = graphCollec.find(graphName.toStdString());
+        QString ghname = ui->lineEdit_4->text().trimmed();
+        string graphNameStr = ghname.toStdString();
 
-        if (it == graphCollec.end()) {
-            qDebug() << "";
-            // Create new graph
-            CityGraph& newGraph= graphCollec[graphName.toStdString()];
-            // graphCollec[graphName.toStdString()] = newGraph;
-            graph = newGraph;  // Set as current graph
+        // Check if the graph exists in graphCollec
+        auto it = graphCollec.find(graphNameStr);
+
+        if (it != graphCollec.end()) {
+            // Graph exists → Switch to it
+            graph = it->second;
+            graphName = graphNameStr;
             isGraphInitialized = true;
-            qDebug() << "Created new graph:" << graphName;
-            return ;
+            qDebug() << "Switched to existing graph:" << ghname;
+        } else {
+            // Graph doesn't exist → Create new one
+            CityGraph newGraph;
+            graphCollec[graphNameStr] = newGraph;
+            graph = newGraph;
+            graphName = graphNameStr;
+            isGraphInitialized = true;
+            qDebug() << "Created new graph:" << ghname;
         }
-
-        graph = it->second;  // Set as current graph
-        isGraphInitialized = true;
-        qDebug() << "Switched to existing graph:" << graphName;
-         graphCollec[graphName.toStdString()].cityFound("cc");      // for(auto it :graphCollec){
+        qDebug() << "Loaded graphs:";
+        for (const auto& [name, _] : graphCollec) {
+            qDebug() << "-" << QString::fromStdString(name);
+        }
+        // graphCollec[graphName.toStdString()].cityFound("cc");      // for(auto it :graphCollec){
         //     for(auto i:it.second.getAdjacencyList()){
         //         qDebug() <<"jj";
         //         qDebug() <<i.first<<" "<<i.second;
@@ -129,7 +173,7 @@ void addgraph::on_pushButton_2_clicked()
         // }
 
 
-    }
+
 
 }
 void addgraph::waringlab(QLabel *l,QString m){

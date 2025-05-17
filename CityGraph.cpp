@@ -11,8 +11,8 @@
 using namespace std;
 
 
-CityGraph::CityGraph(int n, int m)
-{
+// CityGraph::CityGraph(int n, int m)
+// {
     // this->CitiesNum = n;
     // for (int i = 0; i < n; i++)
     // {
@@ -51,7 +51,7 @@ CityGraph::CityGraph(int n, int m)
 
     //     addEdge(c1, c2);
     // }
-}
+//}
 
 CityGraph::CityGraph(unordered_map<string, vector<pair<string, int>>> adjacencyList, unordered_map<pair<string, string>, int, pair_hash>edgeL) {
     setAdjacencyList(adjacencyList);
