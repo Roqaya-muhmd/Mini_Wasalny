@@ -23,7 +23,18 @@ MainWindow::MainWindow(QWidget *parent)
     ui->stackedWidget->setCurrentIndex(0);
     ui->addg_btn_2->setChecked(true);
 
-
+   ui->search_btn->setStyleSheet(
+        "QPushButton[glass=\"true\"] {"
+        "    background: rgba(255, 255, 255, 0.2);"
+        "    border: 1px solid rgba(255, 255, 255, 0.3);"
+        "    border-radius: 12px;"
+        "    backdrop-filter: blur(10px);"
+        "    color: white;"
+        "    padding: 10px 20px;"
+        "    font-size: 14px;"
+        "}"
+        );
+    ui->search_btn->setProperty("glass", true);
 
 }
 

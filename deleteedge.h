@@ -13,6 +13,7 @@ class DeleteEdge : public QWidget
 
 public:
     explicit DeleteEdge(QWidget *parent = nullptr);
+    void showEvent(QShowEvent *event) override;
     ~DeleteEdge();
 
 private slots:

@@ -5,13 +5,13 @@
 #include<vector>
 #include <unordered_map>
 #include <utility>
-#include <iterator>
-#include<queue>
+// #include <iterator>
+// #include<queue>
 #include "CityGraph.h"
 using namespace std;
 
 
-CityGraph::CityGraph(int n, int m)
+CityGraph::CityGraph(int &n, int &m)
 {
     // this->CitiesNum = n;
     // for (int i = 0; i < n; i++)
@@ -68,12 +68,11 @@ CityGraph::CityGraph(){
     this->CitiesNum =0;
 
 }
-string CityGraph::addCity(string c1)
+string CityGraph::addCity(string &c1)
 {
-
-    bool check = false;
+    // bool check = false;
     string message;
-    char agree;
+    // char agree;
     if (cityFound(c1)) {
         message= "City already exist! try again";
         return message;
@@ -172,7 +171,7 @@ void CityGraph::addCity(int number)
 
         while (tolower(agree) == 'y') {
             string c2;
-            int weight;
+            // int weight;
             cout << "please insert city 2\n";
             cin >> c2;
 
@@ -346,7 +345,7 @@ bool CityGraph::deleteEdge2(string c1, string c2) {
         // cout << "No edge between those cities\n";
         return false;
     }
-
+    return false;
 }
 
 void CityGraph::printGraph()

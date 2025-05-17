@@ -15,7 +15,8 @@ public:
     explicit AddCity(QWidget *parent = nullptr);
     ~AddCity();
 private slots:
-    void on_addCityConfirmButton_clicked(bool checked);
+    void on_addCityConfirmButton_clicked();
+     void showEvent(QShowEvent *event) override;
 
 private:
     Ui::AddCity *ui;

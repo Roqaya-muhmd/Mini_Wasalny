@@ -3,9 +3,9 @@
 #include "CityGraph.h"
 #include "Qstring"
 using namespace std;
-#include "iostream"
- CityGraph addgraph::graph ;
 
+CityGraph addgraph::graph ;
+bool addgraph::isGraphInitialized= false;
 addgraph::addgraph(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::addgraph)
@@ -30,7 +30,6 @@ addgraph::~addgraph()
 
 void addgraph::on_pushButton_clicked()
 {
-
     string c2,c1;
     int e1;
     QString message1;

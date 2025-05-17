@@ -15,18 +15,19 @@ class addgraph : public QWidget
 public:
     explicit addgraph(QWidget *parent = nullptr);
     static CityGraph& getGraph() { return graph; }
+    static bool getisGraphInitialized(){return isGraphInitialized; }
     ~addgraph();
     static void waringlab(QLabel *l,QString m);
 
+
 private slots:
     void on_pushButton_clicked();
-
     void on_pushButton_2_clicked();
 
 private:
     Ui::addgraph *ui;
     static CityGraph graph;
-    bool isGraphInitialized = false;
+    static bool isGraphInitialized ;
     unordered_map<string,CityGraph> graphCollec;
 };
 

@@ -13,9 +13,10 @@ class AddEdge : public QWidget
 
 public:
     explicit AddEdge(QWidget *parent = nullptr);
+    void showEvent(QShowEvent *event) override;
     ~AddEdge();
 private slots:
-    void on_addEdgeConfirmButton_clicked(bool checked);
+    void on_addEdgeConfirmButton_clicked();
 
 
 private:

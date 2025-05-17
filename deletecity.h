@@ -13,10 +13,11 @@ class DeleteCity : public QWidget
 
 public:
     explicit DeleteCity(QWidget *parent = nullptr);
+    void showEvent(QShowEvent *event) override;
     ~DeleteCity();
 
 private slots:
-    void on_deleteCityConfirmButton_clicked(bool checked);
+    void on_deleteCityConfirmButton_clicked();
 
 private:
     Ui::DeleteCity *ui;

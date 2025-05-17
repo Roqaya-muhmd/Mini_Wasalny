@@ -20,7 +20,6 @@
     </qresource>
     <qresource prefix="/otherpages"/>
     <qresource prefix="/background_images">
-        <file>map.jpg</file>
         <file>ff.jpg</file>
         <file>mm.png</file>
     </qresource>

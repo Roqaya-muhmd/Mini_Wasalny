@@ -126,6 +126,17 @@
             </property>
             <item>
              <widget class="QPushButton" name="search_btn">
+              <property name="styleSheet">
+               <string notr="true">QPushButton[glass=&quot;true&quot;] {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    color: white;
+    padding: 10px 20px;
+    font-size: 14px;
+}</string>
+              </property>
               <property name="text">
                <string>Welcome to وصلني</string>
               </property>
@@ -212,24 +223,8 @@
          <widget class="DeleteEdge" name="page_6">
           <layout class="QGridLayout" name="gridLayout_7"/>
          </widget>
-         <widget class="QWidget" name="page_7">
-          <layout class="QGridLayout" name="gridLayout_8">
-           <item row="0" column="0">
-            <widget class="QLabel" name="label_10">
-             <property name="font">
-              <font>
-               <pointsize>20</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>User Page</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignmentFlag::AlignCenter</set>
-             </property>
-            </widget>
-           </item>
-          </layout>
+         <widget class="ShowGraph" name="page_7">
+          <layout class="QGridLayout" name="gridLayout_8"/>
          </widget>
         </widget>
        </item>
@@ -747,6 +742,12 @@
    <class>addgraph</class>
    <extends>QWidget</extends>
    <header>addgraph.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ShowGraph</class>
+   <extends>QWidget</extends>
+   <header location="global">showgraph.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
