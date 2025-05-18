@@ -10,6 +10,136 @@
 #include <cctype>
 #include "File.h"
 #include "CityGraph.h"
+#include <QFile>
+#include <QTextStream>
+#include <QDebug>
+#include <iostream>
+#include <algorithm>
+#include <unordered_set>
+
+ QString File::loadAllGraphs(const QString& filename, std::unordered_map<std::string, CityGraph>& allGraphs)
+{
+    QFile file(filename);
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        return "Error opening the file.\n";
+    }
+
+    QTextStream in(&file);
+    std::string line, currentGraph;
+    std::unordered_map<std::string, std::vector<std::pair<std::string, int>>> tmpGraph;
+    std::unordered_map<std::pair<std::string, std::string>, int, pair_hash> tmpEdgeList;
+
+    bool cities = false, edges = false;
+
+    while (!in.atEnd()) {
+        line = in.readLine().toStdString();
+
+        if (line.rfind("# Graph:", 0) == 0) {
+            // Save previous graph if exists
+            if (!currentGraph.empty()) {
+                allGraphs[currentGraph].setAdjacencyList(tmpGraph);
+                allGraphs[currentGraph].setedgeList(tmpEdgeList);
+                tmpGraph.clear();
+                tmpEdgeList.clear();
+            }
+            currentGraph = line.substr(8);
+            trim(currentGraph);
+        }
+        else if (line == "# Cities") {
+            cities = true;
+            edges = false;
+        }
+        else if (line == "# Edges") {
+            edges = true;
+            cities = false;
+        }
+        else if (cities) {
+            trim(line);
+            if (!line.empty() && isalpha(line[0])) {
+                tmpGraph[line]; // Initialize empty adjacency list
+            }
+        }
+        else if (edges) {
+            std::stringstream ss(line);
+            std::string from, to;
+            int dist;
+
+            if (ss >> from >> to >> dist) {
+                // Add to adjacency list (both directions)
+                tmpGraph[from].push_back({to, dist});
+                tmpGraph[to].push_back({from, dist});
+
+                // Add to edge list (only once per edge)
+                auto edge = std::make_pair(std::min(from, to), std::max(from, to));
+                tmpEdgeList[edge] = dist;
+            }
+        }
+    }
+
+    // Save the last graph
+    if (!currentGraph.empty()) {
+        allGraphs[currentGraph].setAdjacencyList(tmpGraph);
+        allGraphs[currentGraph].setedgeList(tmpEdgeList);
+    }
+
+    file.close();
+    return "success";
+}
+
+void File::trim(std::string& s) {
+    s.erase(s.begin(), std::find_if(s.begin(), s.end(), [](int ch) {
+                return !std::isspace(ch);
+            }));
+    s.erase(std::find_if(s.rbegin(), s.rend(), [](int ch) {
+                return !std::isspace(ch);
+            }).base(), s.end());
+}
+
+QString File::saveAllGraphs(const QString& filename, std::unordered_map<std::string, CityGraph>& allGraphs)
+{
+    QFile file(filename);
+    if (!file.open(QIODevice::WriteOnly | QIODevice::Text | QIODevice::Truncate)) {
+        return "Error opening file for writing: " + file.errorString();
+    }
+
+    QTextStream out(&file);
+
+    for ( auto& [graphName, cityGraph] : allGraphs) {
+        const auto& adjList = cityGraph.getAdjacencyList();
+
+        out << "# Graph: " << QString::fromStdString(graphName) << "\n";
+        out << "# Cities\n";
+
+        // Write all cities
+        for (const auto& [city, _] : adjList) {
+            out << QString::fromStdString(city) << "\n";
+        }
+
+        out << "# Edges\n";
+        std::unordered_set<std::string> printedEdges;
+
+        // Write all edges (without duplicates)
+        for (const auto& [from, neighbors] : adjList) {
+            for (const auto& [to, dist] : neighbors) {
+                std::string edgeKey = (from < to) ? from + "-" + to : to + "-" + from;
+
+                if (printedEdges.insert(edgeKey).second) {
+                    out << QString::fromStdString(from) << " "
+                        << QString::fromStdString(to) << " "
+                        << dist << "\n";
+                }
+            }
+        }
+
+        out << "\n";  // Separate graphs with blank line
+    }
+
+    file.close();
+    return "saved";
+}
+
+
+/*
 string File::loadAllGraphs(const string& filename,unordered_map<string, CityGraph>& allGraphs)
 {
     ifstream file(filename);
@@ -291,3 +421,4 @@ void  File::exportToDOT(const string& filename, const string& graphName, const u
 
     outFile << "}\n";
 }
+*/

@@ -4,14 +4,20 @@
 #include <QApplication>
 #include <QFileInfo>
 #include "File.h"
+#include <QDir>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     File file;
     unordered_map<string, CityGraph>& Collec=addgraph::getCollec();
+    QDir dir(QCoreApplication::applicationDirPath());
+    dir.cdUp();  // Go up from build-debug to MyQtProject
+    dir.cdUp();
+    dir.cdUp();
+    QString filePath = dir.filePath("savedData.txt");
 
-    qDebug()<<file.loadAllGraphs("savedData.txt",Collec);
+    qDebug()<<file.loadAllGraphs(filePath,Collec);
     // Verify file exists
     QFileInfo checkFile("savedData.txt");
     if (!checkFile.exists()) {
@@ -26,7 +32,7 @@ int main(int argc, char *argv[])
     QObject::connect(&a, &QApplication::aboutToQuit, [&]() {
         try {
             qDebug() << "Saving graphs before exit...";
-            file.saveAllGraphs("savedData.txt",Collec);
+            file.saveAllGraphs(filePath,Collec);
             qDebug() << "Successfully saved" << addgraph::getCollec().size() << "graphs";
         } catch (const std::exception& e) {
             qCritical() << "Failed to save graphs:" << e.what();

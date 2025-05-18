@@ -58,3 +58,5 @@ RESOURCES += \
     ../../.designer/backup/resource.qrc \
     resource.qrc \
     resource.qrc
+
+DISTFILES +=
