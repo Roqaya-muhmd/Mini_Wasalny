@@ -82,7 +82,7 @@ void addgraph::on_pushButton_clicked()
             else{
                 ui->label_waring4->hide();
                 e1=ui->lineEdit_3->text().trimmed().toInt();
-                message1=QString::fromStdString(graph->addEdge(c1,c2,e1));
+                message3=QString::fromStdString(graph->addEdge(c1,c2,e1));
                 // ui->label_3->setText(message1);
                 waringlab(ui->label_waring4,message3);
 
