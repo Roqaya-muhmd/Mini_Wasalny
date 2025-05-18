@@ -78,12 +78,15 @@ border-radius: 10px;
        </property>
        <property name="maximumSize">
         <size>
-         <width>120</width>
-         <height>25</height>
+         <width>200</width>
+         <height>30</height>
         </size>
        </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignCenter</set>
        </property>
       </widget>
      </item>
@@ -633,13 +636,13 @@ QPushButton:hover {
          <normaloff>:/icons/trash-9-16.ico</normaloff>:/icons/trash-9-16.ico</iconset>
        </property>
        <property name="checkable">
-        <bool>true</bool>
+        <bool>false</bool>
        </property>
        <property name="checked">
-        <bool>true</bool>
+        <bool>false</bool>
        </property>
        <property name="autoExclusive">
-        <bool>true</bool>
+        <bool>false</bool>
        </property>
       </widget>
      </item>

@@ -3,6 +3,7 @@
 #include "CityGraph.h"
 #include "Qstring"
 using namespace std;
+<<<<<<< HEAD
 
 #include "iostream"
 
@@ -11,7 +12,11 @@ using namespace std;
 CityGraph* addgraph::graph = nullptr;  // Starts as nullptr
 string addgraph::graphName;
 unordered_map<string, CityGraph> addgraph::graphCollec;
+=======
+>>>>>>> 5985a37409e3c36de279f07ffa22368660b66abd
 
+CityGraph addgraph::graph ;
+bool addgraph::isGraphInitialized= false;
 addgraph::addgraph(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::addgraph)
@@ -37,7 +42,6 @@ addgraph::~addgraph()
 
 void addgraph::on_pushButton_clicked()
 {
-
     string c2,c1;
     int e1;
     QString message1,message2;

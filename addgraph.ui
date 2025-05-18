@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>468</width>
-    <height>474</height>
+    <height>546</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -180,10 +180,10 @@ QPushButton:hover {
         </size>
        </property>
        <property name="checkable">
-        <bool>true</bool>
+        <bool>false</bool>
        </property>
        <property name="autoExclusive">
-        <bool>true</bool>
+        <bool>false</bool>
        </property>
       </widget>
      </item>
@@ -246,6 +246,9 @@ border-radius: 10px;
        </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignCenter</set>
        </property>
       </widget>
      </item>
@@ -338,6 +341,9 @@ border-radius: 10px;
        <property name="text">
         <string/>
        </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignCenter</set>
+       </property>
       </widget>
      </item>
      <item alignment="Qt::AlignmentFlag::AlignHCenter">
@@ -416,6 +422,9 @@ border-radius: 10px;
        <property name="text">
         <string/>
        </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignCenter</set>
+       </property>
       </widget>
      </item>
      <item alignment="Qt::AlignmentFlag::AlignHCenter">
@@ -479,6 +488,12 @@ QPushButton:hover {
        <property name="icon">
         <iconset resource="myres.qrc">
          <normaloff>:/icons/add-16.ico</normaloff>:/icons/add-16.ico</iconset>
+       </property>
+       <property name="checkable">
+        <bool>false</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>false</bool>
        </property>
       </widget>
      </item>

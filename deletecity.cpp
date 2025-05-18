@@ -12,7 +12,13 @@ DeleteCity::DeleteCity(QWidget *parent)
     connect(ui->deleteCityConfirmButton, &QPushButton::toggled,
             this,&DeleteCity::on_deleteCityConfirmButton_clicked);
 }
+void DeleteCity::showEvent(QShowEvent *event) {
+    QWidget::showEvent(event); // Call base class implementation
+    ui->cityNotFound_warning->hide();
+    ui->deleteCityNameLineEdit->clear();
+    qDebug() << "deletecity is now visible";
 
+}
 DeleteCity::~DeleteCity()
 {
     delete ui;
@@ -21,8 +27,10 @@ string deletedCity;
 
 /*CityGraph tempGraph(2,3);   */// replace with the user's graph
 
-void DeleteCity::on_deleteCityConfirmButton_clicked(bool checked)
-{   if(checked){
+void DeleteCity::on_deleteCityConfirmButton_clicked()
+{
+    if(addgraph::getisGraphInitialized()){
+
         if(ui->deleteCityNameLineEdit->text().isEmpty()){
             addgraph::waringlab(ui->cityNotFound_warning,"write city name");
             return;
@@ -40,6 +48,9 @@ void DeleteCity::on_deleteCityConfirmButton_clicked(bool checked)
             }
 
         }
-     }
+
+    }else{
+        addgraph::waringlab(ui->cityNotFound_warning,"you must add graph first");
+    }
 
 }

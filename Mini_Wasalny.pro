@@ -46,7 +46,6 @@ FORMS += \
     deletecity.ui \
     deleteedge.ui \
     mainwindow.ui \
-    mainwindow1.ui \
     showgraph.ui
 
 # Default rules for deployment.
@@ -57,5 +56,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 RESOURCES += \
     ../../../Downloads/resource.qrc \
     ../../.designer/backup/resource.qrc \
-    myres.qrc \
+    resource.qrc \
     resource.qrc
