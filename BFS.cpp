@@ -51,7 +51,7 @@ void BFS::bfs(string src, string dst, CityGraph& graph, queue<string>& final) {
                 cost += edgeList[{path[i], path[i + 1]}];
             }
         }
-        
+
     }
 }
 
@@ -83,6 +83,7 @@ void BFS::bfs_displays( CityGraph& graph) {
         cout << "The path is :\n";
         while (!path.empty()) {
             string city = path.front();
+            finalPath.push_back(city); // finalPath is for gui
             path.pop();
             if (!path.empty())
                 cout << city << " -> ";
@@ -91,4 +92,7 @@ void BFS::bfs_displays( CityGraph& graph) {
         }
         cout << "With Distance = " << cost << endl;
     }
+}
+vector<string> BFS::getPath() {
+    return finalPath;
 }

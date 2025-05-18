@@ -50,7 +50,7 @@ vector<string> AStar::astar(const string& start, const string& goal) {
     // reconstruct path
     vector<string> path;
     if (parent.find(goal) == parent.end() && start != goal)
-        return {}; 
+        return {};
 
     string at = goal;
     while (!at.empty()) {
@@ -63,13 +63,13 @@ vector<string> AStar::astar(const string& start, const string& goal) {
 }
 void AStar::astar_displays(CityGraph& graph) {
     cost = 0;
-	adjacencyList = graph.getAdjacencyList();
+    adjacencyList = graph.getAdjacencyList();
     unordered_map<pair<string, string>, int, pair_hash> edgeList = graph.getEdgeList();
     string start, goal;
-	cout << "Please enter your start city: " << endl;
-	cin >> start;
-	cout << "Please enter your distenation city: " << endl;
-	cin >> goal;
+    cout << "Please enter your start city: " << endl;
+    cin >> start;
+    cout << "Please enter your distenation city: " << endl;
+    cin >> goal;
     if (!graph.cityFound(start)) {
         cout << "Error : City '" << start << "' doesn't exist in the graph!\n";
         return;
@@ -82,19 +82,20 @@ void AStar::astar_displays(CityGraph& graph) {
         cout << "Error : Your start city is already your distenation city!\n";
         return;
     }
-	for (const auto& pair : adjacencyList) {
-		if (pair.first == goal)continue;
-		cout << "Please enter the heuristic distenation (straight-line guess) between " << pair.first << " and " << goal << endl;
-		int dist; cin >> dist;
-		heuristic[pair.first] = dist;
-	}
-	vector<string> path = astar(start, goal);
+    for (const auto& pair : adjacencyList) {
+        if (pair.first == goal)continue;
+        cout << "Please enter the heuristic distenation (straight-line guess) between " << pair.first << " and " << goal << endl;
+        int dist; cin >> dist;
+        heuristic[pair.first] = dist;
+    }
+    vector<string> path = astar(start, goal);
     if (path.empty()) {
         cout << "Sorry there's no path!" << endl;
     }
     else {
         cout << "Path :\n";
         for (int i = 0;i < path.size();i++) {
+            finalPath.push_back(path[i]); // finalPath is for gui
             if (i != path.size() - 1) {
                 cout << path[i] << " -> ";
                 cost += edgeList[{path[i], path[i + 1]}];
@@ -105,4 +106,7 @@ void AStar::astar_displays(CityGraph& graph) {
         }
         cout << "With Distance = " << cost << endl;
     }
+}
+vector<string>AStar::getPath() {
+    return finalPath;
 }

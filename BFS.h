@@ -7,10 +7,13 @@
 
 using namespace std;
 class BFS {
-	queue<string>bfs_queue;
-	map<string, bool>bfs_map;
-	int cost = 0;
+    queue<string>bfs_queue;
+    map<string, bool>bfs_map;
+    int cost = 0;
+    vector<string>finalPath;
 public:
-	void bfs(string src, string dst, CityGraph& graph, queue<string>& final);
-	void bfs_displays( CityGraph& graph);
+    void bfs(string src, string dst, CityGraph& graph, queue<string>& final);
+    void bfs_displays( CityGraph& graph);
+    vector<string> getPath();
+
 };
