@@ -11,13 +11,9 @@
 using namespace std;
 
 
-<<<<<<< HEAD
-// CityGraph::CityGraph(int n, int m)
-// {
-=======
+
 CityGraph::CityGraph(int &n, int &m)
 {
->>>>>>> 5985a37409e3c36de279f07ffa22368660b66abd
     // this->CitiesNum = n;
     // for (int i = 0; i < n; i++)
     // {
@@ -57,7 +53,7 @@ CityGraph::CityGraph(int &n, int &m)
     //     addEdge(c1, c2);
     // }
 //}
-
+}
 CityGraph::CityGraph(unordered_map<string, vector<pair<string, int>>> adjacencyList, unordered_map<pair<string, string>, int, pair_hash>edgeL) {
     setAdjacencyList(adjacencyList);
     setedgeList(edgeL);
@@ -75,14 +71,13 @@ CityGraph::CityGraph(){
 }
 string CityGraph::addCity(string &c1)
 {
-<<<<<<< HEAD
+
 
     string message;
-=======
+
     // bool check = false;
-    string message;
+
     // char agree;
->>>>>>> 5985a37409e3c36de279f07ffa22368660b66abd
     if (cityFound(c1)) {
         message= "City already exist! try again";
         return message;

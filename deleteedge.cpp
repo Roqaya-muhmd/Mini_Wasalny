@@ -34,27 +34,19 @@ string deletedFirstCity, deletedSecondCity, deletedWeight;
 
 void DeleteEdge::on_deleteEdgeConfirmButton_clicked()
 {  if(addgraph::getisGraphInitialized()){
-    deletedFirstCity = ui->deleteEdgeFirstCityNameLineEdit->text().toStdString();
-    deletedSecondCity = ui->deleteEdgeSecondCityNameLineEdit->text().toStdString();
-    if(deletedFirstCity.empty()){
-        addgraph::waringlab(ui->cityone_warning,"write city1 name");
-        return;
-
-    }else{
-        if(deletedSecondCity.empty()){
-            addgraph::waringlab(ui->citytwo_warning,"write city2 name");
+        deletedFirstCity = ui->deleteEdgeFirstCityNameLineEdit->text().toStdString();
+        deletedSecondCity = ui->deleteEdgeSecondCityNameLineEdit->text().toStdString();
+        if(deletedFirstCity.empty()){
+            addgraph::waringlab(ui->cityone_warning,"write city1 name");
             return;
+
         }else{
-<<<<<<< HEAD
-            if(deletedWeight.empty()){
-                addgraph::waringlab(ui->edge_warning,"write the weight");
+            if(deletedSecondCity.empty()){
+                addgraph::waringlab(ui->citytwo_warning,"write city2 name");
                 return;
             }else{
-                CityGraph* shared=addgraph::getGraph();
-=======
 
-                CityGraph& shared=addgraph::getGraph();
->>>>>>> 5985a37409e3c36de279f07ffa22368660b66abd
+                CityGraph* shared=addgraph::getGraph();
 
                 if(shared->deleteEdge2(deletedFirstCity, deletedSecondCity)){
                     QMessageBox::information(this,"Success", "Edge deleted!");
@@ -65,11 +57,10 @@ void DeleteEdge::on_deleteEdgeConfirmButton_clicked()
                 }
 
 
+            }
         }
-    }
     }else{
         addgraph::waringlab(ui->cityone_warning,"you must add a grapph fisrt");
     }
 
 }
-

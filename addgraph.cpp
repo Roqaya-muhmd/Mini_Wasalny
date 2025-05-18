@@ -3,7 +3,6 @@
 #include "CityGraph.h"
 #include "Qstring"
 using namespace std;
-<<<<<<< HEAD
 
 #include "iostream"
 
@@ -12,10 +11,6 @@ using namespace std;
 CityGraph* addgraph::graph = nullptr;  // Starts as nullptr
 string addgraph::graphName;
 unordered_map<string, CityGraph> addgraph::graphCollec;
-=======
->>>>>>> 5985a37409e3c36de279f07ffa22368660b66abd
-
-CityGraph addgraph::graph ;
 bool addgraph::isGraphInitialized= false;
 addgraph::addgraph(QWidget *parent)
     : QWidget(parent)
@@ -44,7 +39,7 @@ void addgraph::on_pushButton_clicked()
 {
     string c2,c1;
     int e1;
-    QString message1,message2;
+    QString message1,message2,message3;
     if (!isGraphInitialized) {
         // add error label
         waringlab(ui->label_warning,"The graph name is empty");
@@ -66,7 +61,7 @@ void addgraph::on_pushButton_clicked()
 
             if (ui->lineEdit_2->text().isEmpty()) {
                 // add error label
-                waringlab(ui->label_waring3,message1);
+                waringlab(ui->label_waring2,message1);
                 qDebug() << "The city2 is empty";
                 return;
             }
@@ -80,7 +75,7 @@ void addgraph::on_pushButton_clicked()
             }
 
             if (ui->lineEdit_3->text().isEmpty()){
-                waringlab(ui->label_waring4,message2);
+                waringlab(ui->label_waring3,message2);
                 qDebug() << "The no edge added";
                 return;
             }
@@ -89,6 +84,8 @@ void addgraph::on_pushButton_clicked()
                 e1=ui->lineEdit_3->text().trimmed().toInt();
                 message1=QString::fromStdString(graph->addEdge(c1,c2,e1));
                 // ui->label_3->setText(message1);
+                waringlab(ui->label_waring4,message3);
+
             }
 
 

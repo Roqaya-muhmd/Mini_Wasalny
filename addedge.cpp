@@ -45,13 +45,10 @@ void AddEdge::on_addEdgeConfirmButton_clicked(){
         else{
             ui->city1NameNotFound->hide();
             c1=ui->addEdgeFirstCityNameLineEdit->text().toStdString();
-<<<<<<< HEAD
-            message1=QString::fromStdString(shared->addCity(c1));
 
-=======
-            message1=QString::fromStdString(shared.addCity(c1));
+            message1=QString::fromStdString(shared->addCity(c1));
              if(!message1.isEmpty()){ui->city1NameNotFound->setText(message1);}
->>>>>>> 5985a37409e3c36de279f07ffa22368660b66abd
+
 
             if (ui->addEdgeSecondCityNameLineEdit->text().isEmpty()) {
                 // add error label
@@ -64,12 +61,9 @@ void AddEdge::on_addEdgeConfirmButton_clicked(){
                 ui->city2NameNotFound->hide();
                 c2=ui->addEdgeSecondCityNameLineEdit->text().toStdString();
 
-<<<<<<< HEAD
                 message1=QString::fromStdString(shared->addCity(c2));
-=======
-                message1=QString::fromStdString(shared.addCity(c2));
                  if(!message1.isEmpty()){ui->city2NameNotFound->setText(message1);}
->>>>>>> 5985a37409e3c36de279f07ffa22368660b66abd
+
 
             }
 
@@ -81,12 +75,9 @@ void AddEdge::on_addEdgeConfirmButton_clicked(){
             else{
                 ui->edgeNameNotFound->hide();
                 cost=ui->addEdgeWeightLineEdit->text().trimmed().toInt();
-<<<<<<< HEAD
+
                 message1=QString::fromStdString(shared->addEdge(c1,c2,cost));
-=======
-                message1=QString::fromStdString(shared.addEdge(c1,c2,cost));
                  if(!message1.isEmpty()){ui->edgeNameNotFound->setText(message1);}
->>>>>>> 5985a37409e3c36de279f07ffa22368660b66abd
 
             }
 
