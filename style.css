@@ -1,0 +1,84 @@
+/* Main window background */
+QWidget {
+    background-color: white;
+    font-family: \"Segoe UI\", Arial, sans-serif;
+    font-size: 12pt;
+}
+
+/* Buttons */
+QPushButton {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    min-width: 80px;
+}
+
+QPushButton:hover {
+    background-color: #45a049;
+}
+
+QPushButton:pressed {
+    background-color: #3d8b40;
+}
+
+/* Labels */
+QLabel {
+    color: #333333;
+    font-size: 12pt;
+}
+
+QLabel#titleLabel {
+    font-size: 16pt;
+    font-weight: bold;
+    color: #2E7D32;
+}
+
+/* Line edits */
+QLineEdit {
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    padding: 6px;
+    selection-background-color: #A5D6A7;
+}
+
+/* Combo boxes */
+QComboBox {
+    padding: 5px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+}
+
+/* Checkboxes */
+QCheckBox {
+    spacing: 5px;
+}
+
+QCheckBox::indicator {
+    width: 16px;
+    height: 16px;
+}
+
+/* Radio buttons */
+QRadioButton {
+    spacing: 5px;
+}
+
+/* Group boxes */
+QGroupBox {
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    margin-top: 10px;
+    padding-top: 15px;
+}
+
+/* Scroll bars */
+QScrollBar:vertical {
+    width: 10px;
+}
+
+QScrollBar::handle:vertical {
+    background: #E0E0E0;
+    border-radius: 5px;
+}
