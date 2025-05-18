@@ -70,6 +70,45 @@ void DFS::dfs_displays(CityGraph& Graph) {
         cout << "With Distance = " << cost << endl;
     }
 }
+void DFS::dfs_displays2(CityGraph &Graph,string str,string dest)
+{
+    cost = 0;
+    // string str, dest;
+    // cout << "Enter the starting city: ";
+    // cin >> str;
+    // cout << "Enter the destination city: ";
+    // cin >> dest;
+    if (!Graph.cityFound(str)) {
+        cout<< "Error : City '" << str << "' doesn't exist in the graph!\n";
+        return;
+    }
+    if (!Graph.cityFound(dest)) {
+        cout << "Error : City '" << dest << "' doesn't exist in the graph!\n";
+        return;
+    }
+    if (str == dest) {
+        cout << "Error : Your start city is already your distenation city!\n";
+        return;
+    }
+    unordered_map<string, vector<pair<string, int>>> adj = Graph.getAdjacencyList();
+    unordered_map<pair<string, string>, int, pair_hash> edgeList = Graph.getEdgeList();
+    map<string, bool> vis;
+    vector<string> current, final;
+    dfs(adj, str, dest, vis, current, final);
+    if (final.empty()) {
+        cout << "Sorry, there is no available path!";
+    } else {
+        cout << "The path is:\n";
+        for (int i = 0; i < final.size(); i++) {
+            finalPath.push_back(final[i]); // finalPath is for gui
+            i != final.size() - 1 ? cout << final[i] << " -> " : cout << final[i] << endl;
+            if (i != final.size() - 1) {
+                cost += edgeList[{final[i], final[i + 1]}];
+            }
+        }
+        cout << "With Distance = " << cost << endl;
+    }
+}
 vector<string> DFS::getPath() {
     return finalPath;
 }

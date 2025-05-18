@@ -18,6 +18,7 @@ public:
 
     static CityGraph* getGraph() { return graph; }
     static unordered_map<string, CityGraph>& getCollec() {return graphCollec;}
+    static string getGraphName(){return graphName;}
     static bool getisGraphInitialized(){return isGraphInitialized; }
     ~addgraph();
     static void waringlab(QLabel *l,QString m);

@@ -15,6 +15,9 @@ public:
     explicit ShowGraph(QWidget *parent = nullptr);
     ~ShowGraph();
 
+private slots:
+    void on_deleteEdgeConfirmButton_clicked();
+
 private:
     Ui::ShowGraph *ui;
 };

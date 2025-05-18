@@ -34,27 +34,27 @@ b a 1
 
 # Graph: lol
 # Cities
-city
-f
-r
-y
-s
-v
-q
-u
-p
 x
 c
 b
-a
 madina
+a
 d
+city
+p
+u
+f
+y
+r
+s
+v
+q
 # Edges
-city madina 7
-y x 7
+x y 7
 c a 1
 c b 5
 b a 2
+madina city 7
 
 # Graph: mostafa
 # Cities
@@ -80,14 +80,14 @@ b a 2
 
 # Graph: testt
 # Cities
-6
 4
+6
 c
 b
 d
 a
 # Edges
-6 4 6
+4 6 6
 c a 3
 c b 4
 b a 1
@@ -117,13 +117,15 @@ d a 2
 # Cities
 cu
 cr
-y
 x
+y
 b
 a
 # Edges
+cu a 4
 cu cr 7
-y x 7
+cr x 10
+x y 7
 b a 2
 
 # Graph: gui
@@ -132,4 +134,21 @@ a
 b
 # Edges
 a b 11
+
+# Graph: bfstest
+# Cities
+a
+d
+b
+c
+e
+f
+g
+# Edges
+a c 2
+a b 1
+d b 3
+b e 4
+c g 9
+c f 6
 

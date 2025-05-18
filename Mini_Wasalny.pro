@@ -11,6 +11,7 @@ CONFIG += c++17
 SOURCES += \
     AStar.cpp \
     BFS.cpp \
+    BidirectionalBFS.cpp \
     CityGraph.cpp \
     DFS.cpp \
     Dijkstra.cpp \
@@ -20,6 +21,9 @@ SOURCES += \
     addgraph.cpp \
     deletecity.cpp \
     deleteedge.cpp \
+    graphedge.cpp \
+    graphloader.cpp \
+    graphnode.cpp \
     main.cpp \
     mainwindow.cpp \
     showgraph.cpp
@@ -27,6 +31,7 @@ SOURCES += \
 HEADERS += \
     AStar.h \
     BFS.h \
+    BidirectionalBFS.h \
     CityGraph.h \
     DFS.h \
     Dijkstra.h \
@@ -36,6 +41,9 @@ HEADERS += \
     addgraph.h \
     deletecity.h \
     deleteedge.h \
+    graphedge.h \
+    graphloader.h \
+    graphnode.h \
     mainwindow.h \
     showgraph.h
 

@@ -16,6 +16,7 @@ class AStar {
 public:
     vector<string> astar(const string& start, const string& goal);
     void astar_displays(CityGraph& graph);
+    void astar_displays(CityGraph& graph,string start, string goal);
     vector<string> getPath();
 
 };

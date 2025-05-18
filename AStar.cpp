@@ -61,15 +61,11 @@ vector<string> AStar::astar(const string& start, const string& goal) {
 
     return path;
 }
-void AStar::astar_displays(CityGraph& graph) {
+void AStar::astar_displays(CityGraph& graph,string start, string goal) {
     cost = 0;
     adjacencyList = graph.getAdjacencyList();
     unordered_map<pair<string, string>, int, pair_hash> edgeList = graph.getEdgeList();
-    string start, goal;
-    cout << "Please enter your start city: " << endl;
-    cin >> start;
-    cout << "Please enter your distenation city: " << endl;
-    cin >> goal;
+
     if (!graph.cityFound(start)) {
         cout << "Error : City '" << start << "' doesn't exist in the graph!\n";
         return;

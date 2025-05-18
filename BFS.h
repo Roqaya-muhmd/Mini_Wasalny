@@ -13,6 +13,7 @@ class BFS {
     vector<string>finalPath;
 public:
     void bfs(string src, string dst, CityGraph& graph, queue<string>& final);
+    string bfs_displays( CityGraph& graph,string src,string dst);
     void bfs_displays( CityGraph& graph);
     vector<string> getPath();
 

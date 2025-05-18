@@ -34,7 +34,6 @@ void Dijkstra::dijkstra(CityGraph& g, string madina) {
         parent[m.first] = "city";
     }
 
-
     pq.push({ 0,madina });
     dist[madina] = 0;
     while (!pq.empty()) {

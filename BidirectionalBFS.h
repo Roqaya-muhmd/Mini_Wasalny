@@ -18,6 +18,8 @@ public:
         queue<string> & final);
 
     void bidir_bfs_display(CityGraph& graph);
+    void bidir_bfs_display(CityGraph& graph,string src,string dst);
+
     vector<string> getPath();
 
 private:
