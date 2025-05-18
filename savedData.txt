@@ -11,9 +11,12 @@ a
 b
 x
 y
+cr
+cu
 # Edges
 a b 2
 x y 7
+cr cu 7
 
 # Graph: test
 # Cities
@@ -74,13 +77,27 @@ c p 4
 
 # Graph: lol
 # Cities
-a
-b
+f
+s
+v
+q
+r
+y
+x
 c
+b
+a
+madina
+d
+p
+u
+city
 # Edges
-a c 1
-a b 2
-b c 5
+y x 7
+c a 1
+c b 5
+b a 2
+madina city 7
 
 # Graph: sh
 # Cities

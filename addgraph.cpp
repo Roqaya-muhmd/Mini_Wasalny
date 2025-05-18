@@ -57,25 +57,30 @@ void addgraph::on_pushButton_clicked()
             ui->label_waring2->hide();
             c1=ui->lineEdit->text().toStdString();
             message1=QString::fromStdString(graph->addCity(c1));
+            waringlab(ui->label_waring2, message1);
+
             // ui->label_4->setText(message1);
 
             if (ui->lineEdit_2->text().isEmpty()) {
                 // add error label
-                waringlab(ui->label_waring2,message1);
+                if( message1!= "City already exist! try again")
+                    ui->label_waring2->hide();
+
+                waringlab(ui->label_waring3, "The city2 is empty");
                 qDebug() << "The city2 is empty";
                 return;
             }
-
             else{
                 ui->label_waring3->hide();
                 c2=ui->lineEdit_2->text().toStdString();
+                message2=QString::fromStdString(graph->addCity(c2));
+                waringlab(ui->label_waring3, message2);
 
-               message2=QString::fromStdString(graph->addCity(c2));
                 // ui->label_2->setText(message1);
             }
 
             if (ui->lineEdit_3->text().isEmpty()){
-                waringlab(ui->label_waring3,message2);
+                waringlab(ui->label_waring4,"edge is empty");
                 qDebug() << "The no edge added";
                 return;
             }
