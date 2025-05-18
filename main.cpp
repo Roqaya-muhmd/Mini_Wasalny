@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     File file;
-    unordered_map<string, CityGraph>&Collec=addgraph::getCollec();
+    unordered_map<string, CityGraph>& Collec=addgraph::getCollec();
 
     qDebug()<<file.loadAllGraphs("savedData.txt",Collec);
     // Verify file exists
@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
     QObject::connect(&a, &QApplication::aboutToQuit, [&]() {
         try {
             qDebug() << "Saving graphs before exit...";
-            file.saveAllGraphs("savedData.txt",addgraph::getCollec());
+            file.saveAllGraphs("savedData.txt",Collec);
             qDebug() << "Successfully saved" << addgraph::getCollec().size() << "graphs";
         } catch (const std::exception& e) {
             qCritical() << "Failed to save graphs:" << e.what();

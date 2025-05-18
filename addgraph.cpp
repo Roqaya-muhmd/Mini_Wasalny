@@ -7,7 +7,8 @@ using namespace std;
 #include "iostream"
 
 #include <QFileInfo>
-CityGraph addgraph::graph ;
+
+CityGraph* addgraph::graph = nullptr;  // Starts as nullptr
 string addgraph::graphName;
 unordered_map<string, CityGraph> addgraph::graphCollec;
 
@@ -39,7 +40,7 @@ void addgraph::on_pushButton_clicked()
 
     string c2,c1;
     int e1;
-    QString message1;
+    QString message1,message2;
     if (!isGraphInitialized) {
         // add error label
         waringlab(ui->label_warning,"The graph name is empty");
@@ -56,12 +57,12 @@ void addgraph::on_pushButton_clicked()
         else{
             ui->label_waring2->hide();
             c1=ui->lineEdit->text().toStdString();
-            message1=QString::fromStdString(graph.addCity(c1));
+            message1=QString::fromStdString(graph->addCity(c1));
             // ui->label_4->setText(message1);
 
             if (ui->lineEdit_2->text().isEmpty()) {
                 // add error label
-                waringlab(ui->label_waring3,"The city2 is empty");
+                waringlab(ui->label_waring3,message1);
                 qDebug() << "The city2 is empty";
                 return;
             }
@@ -70,19 +71,19 @@ void addgraph::on_pushButton_clicked()
                 ui->label_waring3->hide();
                 c2=ui->lineEdit_2->text().toStdString();
 
-                message1=QString::fromStdString(graph.addCity(c2));
+               message2=QString::fromStdString(graph->addCity(c2));
                 // ui->label_2->setText(message1);
             }
 
             if (ui->lineEdit_3->text().isEmpty()){
-                waringlab(ui->label_waring4,"The no edge added");
+                waringlab(ui->label_waring4,message2);
                 qDebug() << "The no edge added";
                 return;
             }
             else{
                 ui->label_waring4->hide();
                 e1=ui->lineEdit_3->text().trimmed().toInt();
-                message1=QString::fromStdString(graph.addEdge(c1,c2,e1));
+                message1=QString::fromStdString(graph->addEdge(c1,c2,e1));
                 // ui->label_3->setText(message1);
             }
 
@@ -148,7 +149,7 @@ void addgraph::on_pushButton_2_clicked()
 
         if (it != graphCollec.end()) {
             // Graph exists → Switch to it
-            graph = it->second;
+            graph = &it->second;
             graphName = graphNameStr;
             isGraphInitialized = true;
             qDebug() << "Switched to existing graph:" << ghname;
@@ -156,7 +157,7 @@ void addgraph::on_pushButton_2_clicked()
             // Graph doesn't exist → Create new one
             CityGraph newGraph;
             graphCollec[graphNameStr] = newGraph;
-            graph = newGraph;
+            graph = &graphCollec[graphNameStr];
             graphName = graphNameStr;
             isGraphInitialized = true;
             qDebug() << "Created new graph:" << ghname;

@@ -42,9 +42,9 @@ void DeleteEdge::on_deleteEdgeConfirmButton_clicked()
                 addgraph::waringlab(ui->edge_warning,"write the weight");
                 return;
             }else{
-                CityGraph& shared=addgraph::getGraph();
+                CityGraph* shared=addgraph::getGraph();
 
-                if(shared.deleteEdge2(deletedFirstCity, deletedSecondCity)){
+                if(shared->deleteEdge2(deletedFirstCity, deletedSecondCity)){
                     QMessageBox::information(this,"Success", "Edge deleted!");
                 }
                 else{

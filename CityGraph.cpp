@@ -58,10 +58,10 @@ CityGraph::CityGraph(unordered_map<string, vector<pair<string, int>>> adjacencyL
     setedgeList(edgeL);
 }
 
-void CityGraph::setAdjacencyList(unordered_map<string, vector<pair<string, int>>> adjacencyList1) {
+void CityGraph::setAdjacencyList(unordered_map<string, vector<pair<string, int>>>& adjacencyList1) {
     adjacencyList = adjacencyList1;
 }
-void CityGraph::setedgeList(unordered_map<pair<string, string>, int, pair_hash>edgeL) {
+void CityGraph::setedgeList(unordered_map<pair<string, string>, int, pair_hash>& edgeL) {
     edgeList = edgeL;
 }
 CityGraph::CityGraph(){
@@ -71,9 +71,7 @@ CityGraph::CityGraph(){
 string CityGraph::addCity(string c1)
 {
 
-    bool check = false;
     string message;
-    char agree;
     if (cityFound(c1)) {
         message= "City already exist! try again";
         return message;

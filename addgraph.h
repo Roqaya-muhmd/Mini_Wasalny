@@ -15,7 +15,7 @@ class addgraph : public QWidget
 
 public:
     explicit addgraph(QWidget *parent = nullptr);
-    static CityGraph& getGraph() { return graph; }
+    static CityGraph* getGraph() { return graph; }
     static unordered_map<string, CityGraph>& getCollec() {return graphCollec;}
     ~addgraph();
     static void waringlab(QLabel *l,QString m);
@@ -29,7 +29,7 @@ private slots:
 private:
     Ui::addgraph *ui;
 
-    static CityGraph graph;
+    static CityGraph* graph;
     static string graphName;
     bool isGraphInitialized = false;
     unordered_map<string, unordered_map<string, vector<pair<string, int>>>> allGraphs;

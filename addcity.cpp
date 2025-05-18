@@ -30,14 +30,14 @@ void AddCity::on_addCityConfirmButton_clicked(bool checked){
             return;
         }else{
             ui->waring_nameNotFound->hide();
-            CityGraph& shared=addgraph::getGraph();
+            CityGraph* shared=addgraph::getGraph();
             c1=ui->addCityNameLineEdit->text().toStdString();
-           shared.addCity(c1);
+           shared->addCity(c1);
             // message1=QString::fromStdString(addgraph::getGraph().addCity(c1));
             // ui->addCityNameLabel->setText(message1);
-            qDebug() << "City found 1:" << shared.cityFound("jj");
+            qDebug() << "City found 1:" << shared->cityFound("jj");
 
-            qDebug() << "City found 2:" << shared.cityFound("cairo");
+            qDebug() << "City found 2:" << shared->cityFound("cairo");
             ui->addCityNameLineEdit->clear();
         }
 

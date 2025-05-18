@@ -21,7 +21,7 @@ AddEdge::~AddEdge()
 void AddEdge::on_addEdgeConfirmButton_clicked(bool checked){
     std::string c1,c2;int cost;
     QString message1;
-    CityGraph& shared=addgraph::getGraph();
+    CityGraph* shared=addgraph::getGraph();
 
     if(checked){
         if (ui->addEdgeFirstCityNameLineEdit->text().isEmpty()) {
@@ -33,7 +33,7 @@ void AddEdge::on_addEdgeConfirmButton_clicked(bool checked){
         else{
             ui->city1NameNotFound->hide();
             c1=ui->addEdgeFirstCityNameLineEdit->text().toStdString();
-            message1=QString::fromStdString(shared.addCity(c1));
+            message1=QString::fromStdString(shared->addCity(c1));
 
 
             if (ui->addEdgeSecondCityNameLineEdit->text().isEmpty()) {
@@ -47,7 +47,7 @@ void AddEdge::on_addEdgeConfirmButton_clicked(bool checked){
                 ui->city2NameNotFound->hide();
                 c2=ui->addEdgeSecondCityNameLineEdit->text().toStdString();
 
-                message1=QString::fromStdString(shared.addCity(c2));
+                message1=QString::fromStdString(shared->addCity(c2));
 
             }
 
@@ -59,7 +59,7 @@ void AddEdge::on_addEdgeConfirmButton_clicked(bool checked){
             else{
                 ui->edgeNameNotFound->hide();
                 cost=ui->addEdgeWeightLineEdit->text().trimmed().toInt();
-                message1=QString::fromStdString(shared.addEdge(c1,c2,cost));
+                message1=QString::fromStdString(shared->addEdge(c1,c2,cost));
 
             }
 

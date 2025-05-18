@@ -28,8 +28,8 @@ string File::loadAllGraphs(const string& filename,unordered_map<string, CityGrap
         if (line.rfind("# Graph:", 0) == 0) {
             // Save previous graph if exists
             if (!currentGraph.empty()) {
-                allGraphs[currentGraph].getAdjacencyList() = tmpGraph;
-                allGraphs[currentGraph].getEdgeList() = tmpEdgeList;
+                allGraphs[currentGraph].setAdjacencyList(tmpGraph);
+                allGraphs[currentGraph].setedgeList(tmpEdgeList);
                 tmpGraph.clear();
                 tmpEdgeList.clear();
 
@@ -71,14 +71,12 @@ string File::loadAllGraphs(const string& filename,unordered_map<string, CityGrap
 
     // Save the last graph
     if (!currentGraph.empty()) {
-        allGraphs[currentGraph].getAdjacencyList() = tmpGraph;
-        allGraphs[currentGraph].getEdgeList() = tmpEdgeList;
-    }
+        allGraphs[currentGraph].setAdjacencyList(tmpGraph);
+        allGraphs[currentGraph].setedgeList(tmpEdgeList);    }
 
     file.close();
     return "success";
 }
-
 void File::trim(string& s) {
     s.erase(s.begin(), find_if(s.begin(), s.end(), [](int ch) {
                 return !isspace(ch);

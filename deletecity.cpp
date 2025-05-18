@@ -29,10 +29,10 @@ void DeleteCity::on_deleteCityConfirmButton_clicked(bool checked)
         }else{
             ui->cityNotFound_warning->hide();
             deletedCity = ui->deleteCityNameLineEdit->text().toStdString();
-            CityGraph& shared=addgraph::getGraph();
-            if(shared.deleteCity2(deletedCity)){
+            CityGraph* shared=addgraph::getGraph();
+            if(shared->deleteCity2(deletedCity)){
                 QMessageBox::information(this,"Success", "City Deleted!");
-                qDebug() << "City found 1:" << shared.cityFound("jj");
+                qDebug() << "City found 1:" << shared->cityFound("jj");
 
             }
             else{
