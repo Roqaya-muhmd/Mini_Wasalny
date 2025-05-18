@@ -93,6 +93,39 @@ void BFS::bfs_displays( CityGraph& graph) {
         cout << "With Distance = " << cost << endl;
     }
 }
+
+string BFS::bfs_displays( CityGraph& graph,string src,string dst) {
+    if (!graph.cityFound(src)) {
+        return "Error : City '"+ src + "' doesn't exist in the graph!\n";
+
+    }
+    if (!graph.cityFound(dst)) {
+        return  "Error : City '" + dst + "' doesn't exist in the graph!\n";
+
+    }
+    if (src == dst) {
+        return  "Error : Your start city is already your distenation city!\n";
+
+    }
+    queue<string> path;
+    bfs(src, dst, graph, path);
+
+    if (path.empty()) {
+        return  "Sorry, there is no available path!" ;
+    }
+    else {
+        while (!path.empty()) {
+            string city = path.front();
+            finalPath.push_back(city); // finalPath is for gui
+            path.pop();
+            if (!path.empty())
+                cout << city << " -> ";
+            else
+                cout << city << endl;;
+        }
+        return  "With Distance = " + cost ;
+    }
+}
 vector<string> BFS::getPath() {
     return finalPath;
 }

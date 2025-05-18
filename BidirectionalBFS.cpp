@@ -96,12 +96,7 @@ void BidirectionalBFS::build_path(string src, string meeting_node, string dst,
         cost += edgeList[{full_path[i], full_path[i + 1]}];
     }
 }
-void BidirectionalBFS::bidir_bfs_display(CityGraph& graph) {
-    string src, dst;
-    cout << "Enter the starting city: ";
-    cin >> src;
-    cout << "Enter the destination city: ";
-    cin >> dst;
+void BidirectionalBFS::bidir_bfs_display(CityGraph& graph,string src,string dst) {
     if (!graph.cityFound(src)) {
         cout << "Error : City '" << src << "' doesn't exist in the graph!\n";
         return;
