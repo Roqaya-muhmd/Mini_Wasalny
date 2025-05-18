@@ -61,13 +61,15 @@ void DFS::dfs_displays(CityGraph& Graph) {
     else {
         cout << "The path is:\n";
         for (int i = 0; i < final.size(); i++) {
-           /* cout << final[i] << " " << final[i + 1] << endl;*/
+            finalPath.push_back(final[i]); // finalPath is for gui
             i != final.size() - 1 ? cout << final[i] << " -> " : cout << final[i]<<endl;
             if (i != final.size() - 1) {
-                cout<< edgeList[{final[i], final[i + 1]}]<<endl;
                 cost += edgeList[{final[i], final[i + 1]}];
             }
         }
         cout << "With Distance = " << cost << endl;
     }
+}
+vector<string> DFS::getPath() {
+    return finalPath;
 }
