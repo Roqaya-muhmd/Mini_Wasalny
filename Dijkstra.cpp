@@ -6,6 +6,7 @@ using namespace std;
 #include"Dijkstra.h"
 #include <stack>
 #include "CityGraph.h"
+#include "QDebug"
 long long const OO = INT_MAX;
 
 
@@ -72,15 +73,11 @@ stack<string> Dijkstra::checkPath(unordered_map<string, string>par, string src, 
     return out;
 
 }
-void Dijkstra::dijkstra_displays(CityGraph& graph) {
+void Dijkstra::dijkstra_displays(CityGraph& graph,string from,string to) {
     cost = 0;
     unordered_map<pair<string, string>, int, pair_hash> edgeList = graph.getEdgeList();
 
-    cout << "Please enter your starting city : " << endl;
-    string from ,to;
-    cin >> from;
-    cout << "Please enter your destination city : " << endl;
-    cin >> to;
+
     if (!graph.cityFound(from)) {
         cout << "Error : City '" << from << "' doesn't exist in the graph!\n";
         return;
@@ -106,14 +103,9 @@ void Dijkstra::dijkstra_displays(CityGraph& graph) {
             final.push_back(path.top());
             path.pop();
         }
-        for (int i = 0; i < final.size();i++) {
-            finalPath.push_back(final[i]); // finalPath is for gui
-            i != final.size() - 1 ? cout << final[i] << " -> " : cout << final[i] << endl;
-            if (i != final.size() - 1) {
-                cost += edgeList[{final[i], final[i + 1]}];
-            }
-        }
-        cout << "With Distance = " << cost << endl;
+        unordered_map<string, int>mm=getdist();
+        cost=mm[to];
+        qDebug() << "With Distance = " << cost ;
     }
 }
 vector<string>Dijkstra::getPath() {

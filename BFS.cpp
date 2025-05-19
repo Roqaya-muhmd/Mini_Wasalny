@@ -90,7 +90,7 @@ void BFS::bfs_displays( CityGraph& graph) {
             else
                 cout << city << endl;;
         }
-        cout << "With Distance = " << cost << endl;
+        cout << "Distance= " << cost << endl;
     }
 }
 
@@ -124,7 +124,7 @@ string BFS::bfs_displays( CityGraph& graph,string src,string dst) {
                 cout << city << endl;;
         }
 
-        return  "With Distance = " + cost ;
+        return  "Distance=" + cost ;
     }
 }
 vector<string> BFS::getPath() {

@@ -14,8 +14,9 @@ public:
         const std::unordered_map<std::string, std::unordered_map<std::string, std::vector<std::pair<std::string, int>>>>& allGraphs, //all graphs since i cant access files
         const std::vector<std::string>& highlightedPath, //if there is a path
         QGraphicsScene* scene
-    );
 
+
+    );
 
 };
 

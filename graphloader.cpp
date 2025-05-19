@@ -8,15 +8,17 @@
 #include <unordered_set>
 #include <cstdlib>
 #include <ctime>
+#include <QTimer>
 
 void GraphLoader::loadGraph(
     const std::string& graphName,
     const std::unordered_map<std::string, std::unordered_map<std::string, std::vector<std::pair<std::string, int>>>>& allGraphs,
     const std::vector<std::string>& highlightedPath,
     QGraphicsScene* scene
-) 
+
+)
 {
-    scene->clear(); 
+
 
     if (allGraphs.find(graphName) == allGraphs.end()) {
         qDebug() << "Graph not found:" << QString::fromStdString(graphName); //we want to handle it in another way in GUI
@@ -31,7 +33,7 @@ void GraphLoader::loadGraph(
     const int sceneHeight = 600;
 
     
-	for (const auto& [from, edges] : adjacency) //iterating through the adjacency list, from da is our city 
+    for (const auto& [from, edges] : adjacency) //iterating through the adjacency list, from da is our city
     {
         QString qFrom = QString::fromStdString(from); //qfrom is our src node or first node
         if (!nodeMap.contains(qFrom)) {
@@ -59,10 +61,12 @@ void GraphLoader::loadGraph(
             GraphEdge* edge = new GraphEdge(nodeMap[qFrom], nodeMap[qTo], weight);
             scene->addItem(edge); //adding the edge
         }
-    } 
+    }
 
     //the code that highlights paths and etc
-    for (size_t i = 0; i + 1 < highlightedPath.size(); ++i) { //el condition da so we dont fall into errors
+    int cost = 0;
+    for (size_t i = 0; i + 1 < highlightedPath.size(); ++i)
+    { //el condition da so we dont fall into errors
         QString from = QString::fromStdString(highlightedPath[i]);
         QString to = QString::fromStdString(highlightedPath[i + 1]);
 
@@ -72,10 +76,12 @@ void GraphLoader::loadGraph(
                 QString s = edge->sourceNode()->getLabel();
                 QString d = edge->destNode()->getLabel();
                 if ((s == from && d == to) || (s == to && d == from)) {
-                    edge->setHighlight(true); 
+                    edge->setHighlight(true);
+
                 }
             }
         }
+
 
 		if (nodeMap.contains(from)) nodeMap[from]->setBrush(Qt::green); //colouring the nodes of the shortest path
         if (nodeMap.contains(to))   nodeMap[to]->setBrush(Qt::green);

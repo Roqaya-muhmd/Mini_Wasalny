@@ -218,6 +218,7 @@ void ShowGraph::on_deleteEdgeConfirmButton_clicked()
              { Dijkstra d;
                 d.dijkstra(*addgraph::getGraph(),ans);
                 stack<string>st=  d.checkPath(d.getparent(),ans,ans2);
+                d.dijkstra_displays(*addgraph::getGraph(),ans,ans2);
                 while(!st.empty()){
                     shortestPath.push_back(st.top());
                     st.pop();
@@ -234,7 +235,9 @@ void ShowGraph::on_deleteEdgeConfirmButton_clicked()
          }else if(algo=="BFS"){
              if(!check_in()){
                  BFS b;
+                 //ui->label_3->setText(QString::fromStdString(b.bfs_displays(*addgraph::getGraph(),ans,ans2)));
                  QMessageBox::information(this,"Message",  QString::fromStdString(b.bfs_displays(*addgraph::getGraph(),ans,ans2)));
+
                  shortestPath=b.getPath();
 
              }

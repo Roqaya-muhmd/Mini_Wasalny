@@ -74,10 +74,6 @@ string CityGraph::addCity(string &c1)
 
 
     string message;
-
-    // bool check = false;
-
-    // char agree;
     if (cityFound(c1)) {
         message= "City already exist! try again";
         return message;
@@ -133,7 +129,7 @@ void CityGraph::addEdge(string c1, string c2)
 
 
         adjacencyList[c1].push_back({ c2,weight });
-        adjacencyList[c2].push_back({ c1,weight }); //this is undirected assuming that el taree2 raye7 gai
+        adjacencyList[c2].push_back({ c1,weight }); //this is undirected
         edgeList[{c1, c2}] = weight;
         edgeList[{c2, c1}] = weight;
         accepted = true;

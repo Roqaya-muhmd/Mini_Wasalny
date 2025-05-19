@@ -1,167 +1,145 @@
-# Graph: bfstest
+# Graph: help
 # Cities
-hu
-g
-f
 e
 c
 b
 d
 a
 # Edges
-g a 5
-g c 9
-g f 99
-f c 6
-e b 4
-c a 2
-b a 1
-b d 3
-d a 1
+e d 80
+c d 20
+c b 9
+b a 4
 
-# Graph: gui
+# Graph: edit
 # Cities
-u
-r
 b
-a
-t
-sl
-s
-v
-# Edges
-u t 8
-u r 3
-b a 11
-s v 0
-
-# Graph: mo
-# Cities
-a
-b
-y
-x
-cr
-cu
-# Edges
-a cu 4
-a b 2
-y x 7
-x cr 10
-cr cu 7
-
-# Graph: test
-# Cities
-8
-a
 d
-s
-g
-f
+a
 # Edges
-8 8 8
-a f 3
-a g 4
-a s 1
-a d 2
-d s 9
-s f 7
-s g 8
+b a 1
+d a 4
+
+# Graph: show
+# Cities
+p
+c
+b
+a
+# Edges
+p a 6
+c a 7
+c b 3
+b a 1
 
 # Graph: testt
 # Cities
-6
-a
-d
-b
 4
+6
 c
+b
+d
+a
 # Edges
-6 4 6
-a c 3
-a b 1
-a d 8
-d b 6
+4 6 6
+c a 3
+c b 4
+b a 1
+b d 6
+d a 8
 d d 4
-b c 4
+
+# Graph: mostafa
+# Cities
+p
+c
+b
+a
+# Edges
+p b 5
+p c 4
+c a 2
+c b 3
+b a 1
 
 # Graph: mangao
 # Cities
 2
-a
 b
+a
 # Edges
 2 2 2
-a b 2
-
-# Graph: mostafa
-# Cities
-a
-b
-c
-p
-# Edges
-a c 2
-a b 1
-b p 5
-b c 3
-c p 4
-
-# Graph: lol
-# Cities
-q
-x
-c
-b
-madina
-a
-d
-city
-u
-p
-f
-y
-r
-v
-s
-# Edges
-x y 7
-c a 1
-c b 5
 b a 2
-madina city 7
 
-# Graph: sh
+# Graph: test
 # Cities
-a
-b
-c
-p
-# Edges
-a p 6
-a c 7
-a b 1
-b c 3
-
-# Graph: edit
-# Cities
-a
+8
+f
+g
+s
 d
-b
+a
 # Edges
-a b 1
-a d 4
+8 8 8
+f a 3
+f s 7
+g a 4
+g s 8
+s a 1
+s d 9
+d a 2
 
-# Graph: help
+# Graph: gui
+# Cities
+v
+sl
+a
+t
+b
+s
+r
+u
+# Edges
+v s 0
+a b 11
+t u 8
+r u 3
+
+# Graph: bfstest
 # Cities
 a
 d
 b
 c
 e
+f
+g
+hu
 # Edges
-a b 4
-d e 80
-d c 20
-b c 9
+a g 5
+a c 2
+a b 1
+a d 1
+d b 3
+b e 4
+c g 9
+c f 6
+f g 99
+
+# Graph: disc
+# Cities
+i
+x
+a
+d
+b
+c
+y
+# Edges
+i x 6
+a y 1
+a b 6
+a d 1
+b c 5
+c y 1
 

@@ -15,7 +15,8 @@ public:
     void updatePosition();
     GraphNode* sourceNode() const;
     GraphNode* destNode() const;
-    void setHighlight(bool on); 
+    void setHighlight(bool on);
+    int getWeight(){return weight;}
 
 private:
     GraphNode* source;

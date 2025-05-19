@@ -20,7 +20,7 @@ class Dijkstra {
 public:
 
     void dijkstra(CityGraph& g, string madina);
-    void dijkstra_displays(CityGraph& graph);
+    void dijkstra_displays(CityGraph& graph,string d,string h);
     stack<string> checkPath(unordered_map<string, string>path, string src, string dest);
     unordered_map<string, string> getparent();
     unordered_map<string, int> getdist();
