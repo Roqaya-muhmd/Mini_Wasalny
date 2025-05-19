@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>482</width>
+    <width>488</width>
     <height>344</height>
    </rect>
   </property>
@@ -105,6 +105,11 @@ border-radius: 10px;
          <height>30</height>
         </size>
        </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
        <property name="styleSheet">
         <string notr="true">QLineEdit {
     border: 1px solid #ccc;       /* Border color */
@@ -179,6 +184,11 @@ border-radius: 10px;
          <height>30</height>
         </size>
        </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
        <property name="styleSheet">
         <string notr="true">QLineEdit {
     border: 1px solid #ccc;       /* Border color */
@@ -221,7 +231,7 @@ QLineEdit:last-child {
        <property name="minimumSize">
         <size>
          <width>100</width>
-         <height>20</height>
+         <height>40</height>
         </size>
        </property>
        <property name="maximumSize">
@@ -729,7 +739,7 @@ QPushButton:hover {
         <string>حذف</string>
        </property>
        <property name="icon">
-        <iconset resource="myres.qrc">
+        <iconset resource="resource.qrc">
          <normaloff>:/icons/trash-9-16.ico</normaloff>:/icons/trash-9-16.ico</iconset>
        </property>
       </widget>
@@ -752,7 +762,7 @@ QPushButton:hover {
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap resource="myres.qrc">:/background_images/mm.png</pixmap>
+        <pixmap resource="resource.qrc">:/background_images/mm.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -764,7 +774,7 @@ QPushButton:hover {
   </layout>
  </widget>
  <resources>
-  <include location="myres.qrc"/>
+  <include location="resource.qrc"/>
  </resources>
  <connections/>
 </ui>

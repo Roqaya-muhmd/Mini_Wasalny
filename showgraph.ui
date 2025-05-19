@@ -29,11 +29,22 @@ QListWidget::item:nth-child(odd) {
   <widget class="QLineEdit" name="source">
    <property name="geometry">
     <rect>
-     <x>160</x>
+     <x>30</x>
      <y>100</y>
-     <width>113</width>
-     <height>20</height>
+     <width>200</width>
+     <height>30</height>
     </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>200</width>
+     <height>30</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
    </property>
    <property name="styleSheet">
     <string notr="true">QLineEdit {
@@ -52,17 +63,22 @@ QLineEdit:last-child {
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>170</x>
+     <x>50</x>
      <y>50</y>
-     <width>100</width>
+     <width>170</width>
      <height>40</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
-     <width>80</width>
+     <width>170</width>
      <height>40</height>
     </size>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>15</pointsize>
+    </font>
    </property>
    <property name="styleSheet">
     <string notr="true">QQLabel {
@@ -90,11 +106,22 @@ border-radius: 10px;
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>200</x>
-     <y>140</y>
-     <width>37</width>
-     <height>12</height>
+     <x>0</x>
+     <y>130</y>
+     <width>170</width>
+     <height>30</height>
     </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>170</width>
+     <height>30</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>15</pointsize>
+    </font>
    </property>
    <property name="styleSheet">
     <string notr="true">QQLabel {
@@ -119,11 +146,22 @@ border-radius: 10px;
   <widget class="QLineEdit" name="distanation">
    <property name="geometry">
     <rect>
-     <x>160</x>
-     <y>160</y>
-     <width>113</width>
-     <height>20</height>
+     <x>30</x>
+     <y>170</y>
+     <width>200</width>
+     <height>30</height>
     </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>200</width>
+     <height>30</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
    </property>
    <property name="styleSheet">
     <string notr="true">QLineEdit {
@@ -142,22 +180,22 @@ QLineEdit:last-child {
   <widget class="QPushButton" name="deleteEdgeConfirmButton">
    <property name="geometry">
     <rect>
-     <x>170</x>
-     <y>210</y>
+     <x>80</x>
+     <y>240</y>
      <width>100</width>
-     <height>30</height>
+     <height>40</height>
     </rect>
    </property>
    <property name="minimumSize">
     <size>
      <width>100</width>
-     <height>20</height>
+     <height>40</height>
     </size>
    </property>
    <property name="maximumSize">
     <size>
      <width>100</width>
-     <height>30</height>
+     <height>40</height>
     </size>
    </property>
    <property name="palette">
@@ -661,6 +699,22 @@ QPushButton:hover {
    <property name="icon">
     <iconset resource="resource.qrc">
      <normaloff>:/icons/trash-9-16.ico</normaloff>:/icons/trash-9-16.ico</iconset>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="listWidget">
+   <property name="geometry">
+    <rect>
+     <x>250</x>
+     <y>60</y>
+     <width>201</width>
+     <height>231</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>200</width>
+     <height>0</height>
+    </size>
    </property>
   </widget>
  </widget>

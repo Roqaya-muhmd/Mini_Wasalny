@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>482</width>
+    <width>488</width>
     <height>344</height>
    </rect>
   </property>
@@ -26,6 +26,28 @@
      <property name="spacing">
       <number>30</number>
      </property>
+     <item alignment="Qt::AlignmentFlag::AlignHCenter">
+      <widget class="QLabel" name="waring_nameNotFound">
+       <property name="minimumSize">
+        <size>
+         <width>120</width>
+         <height>25</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>200</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
      <item alignment="Qt::AlignmentFlag::AlignHCenter">
       <widget class="QLabel" name="addCityNameLabel">
        <property name="minimumSize">
@@ -64,32 +86,10 @@ border-radius: 10px;
 }</string>
        </property>
        <property name="text">
-        <string>   اسم المدينة</string>
+        <string>اسم المدينة</string>
        </property>
        <property name="alignment">
-        <set>Qt::AlignmentFlag::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item alignment="Qt::AlignmentFlag::AlignHCenter">
-      <widget class="QLabel" name="waring_nameNotFound">
-       <property name="minimumSize">
-        <size>
-         <width>120</width>
-         <height>25</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>200</width>
-         <height>30</height>
-        </size>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignmentFlag::AlignCenter</set>
+        <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
        </property>
       </widget>
      </item>
@@ -106,6 +106,11 @@ border-radius: 10px;
          <width>200</width>
          <height>30</height>
         </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">QLineEdit {
@@ -644,7 +649,7 @@ QPushButton:hover {
         <string>إضافة</string>
        </property>
        <property name="icon">
-        <iconset resource="myres.qrc">
+        <iconset resource="resource.qrc">
          <normaloff>:/icons/add-row-16.ico</normaloff>:/icons/add-row-16.ico</iconset>
        </property>
        <property name="iconSize">
@@ -682,7 +687,7 @@ QPushButton:hover {
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap resource="myres.qrc">:/background_images/mm.png</pixmap>
+        <pixmap resource="resource.qrc">:/background_images/mm.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
@@ -694,7 +699,7 @@ QPushButton:hover {
   </layout>
  </widget>
  <resources>
-  <include location="myres.qrc"/>
+  <include location="resource.qrc"/>
  </resources>
  <connections/>
 </ui>

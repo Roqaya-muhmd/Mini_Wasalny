@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>482</width>
-    <height>399</height>
+    <width>488</width>
+    <height>425</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -75,6 +75,11 @@ border-radius: 10px;
          <height>30</height>
         </size>
        </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
        <property name="styleSheet">
         <string notr="true">QLineEdit {
     border: 1px solid #ccc;       /* Border color */
@@ -87,28 +92,6 @@ border-radius: 10px;
 QLineEdit:last-child {
     border-right: 1px solid #ccc; 
 }</string>
-       </property>
-      </widget>
-     </item>
-     <item alignment="Qt::AlignmentFlag::AlignHCenter">
-      <widget class="QLabel" name="city1NameNotFound">
-       <property name="minimumSize">
-        <size>
-         <width>120</width>
-         <height>25</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>200</width>
-         <height>30</height>
-        </size>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignmentFlag::AlignCenter</set>
        </property>
       </widget>
      </item>
@@ -158,7 +141,41 @@ border-radius: 10px;
       </widget>
      </item>
      <item alignment="Qt::AlignmentFlag::AlignHCenter">
-      <widget class="QLabel" name="city2NameNotFound">
+      <widget class="QLineEdit" name="addEdgeSecondCityNameLineEdit">
+       <property name="minimumSize">
+        <size>
+         <width>200</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>200</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit {
+    border: 1px solid #ccc;       /* Border color */
+	color: rgb(0, 0, 0);
+    padding: 5px;
+    margin: 0;                    /* Remove default margin */
+}
+
+/* Last QLineEdit should have a right border */
+QLineEdit:last-child {
+    border-right: 1px solid #ccc; 
+}</string>
+       </property>
+      </widget>
+     </item>
+     <item alignment="Qt::AlignmentFlag::AlignHCenter">
+      <widget class="QLabel" name="city1NameNotFound">
        <property name="minimumSize">
         <size>
          <width>120</width>
@@ -176,35 +193,6 @@ border-radius: 10px;
        </property>
        <property name="alignment">
         <set>Qt::AlignmentFlag::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item alignment="Qt::AlignmentFlag::AlignHCenter">
-      <widget class="QLineEdit" name="addEdgeSecondCityNameLineEdit">
-       <property name="minimumSize">
-        <size>
-         <width>200</width>
-         <height>30</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>200</width>
-         <height>30</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QLineEdit {
-    border: 1px solid #ccc;       /* Border color */
-	color: rgb(0, 0, 0);
-    padding: 5px;
-    margin: 0;                    /* Remove default margin */
-}
-
-/* Last QLineEdit should have a right border */
-QLineEdit:last-child {
-    border-right: 1px solid #ccc; 
-}</string>
        </property>
       </widget>
      </item>
@@ -267,6 +255,11 @@ border-radius: 10px;
          <height>30</height>
         </size>
        </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
        <property name="styleSheet">
         <string notr="true">QLineEdit {
     border: 1px solid #ccc;       /* Border color */
@@ -283,7 +276,7 @@ QLineEdit:last-child {
       </widget>
      </item>
      <item alignment="Qt::AlignmentFlag::AlignHCenter">
-      <widget class="QLabel" name="edgeNameNotFound">
+      <widget class="QLabel" name="city2NameNotFound">
        <property name="minimumSize">
         <size>
          <width>120</width>
@@ -292,8 +285,8 @@ QLineEdit:last-child {
        </property>
        <property name="maximumSize">
         <size>
-         <width>120</width>
-         <height>25</height>
+         <width>200</width>
+         <height>30</height>
         </size>
        </property>
        <property name="text">
@@ -309,7 +302,7 @@ QLineEdit:last-child {
        <property name="minimumSize">
         <size>
          <width>100</width>
-         <height>20</height>
+         <height>40</height>
         </size>
        </property>
        <property name="maximumSize">
@@ -817,7 +810,7 @@ QPushButton:hover {
         <string>إضافة</string>
        </property>
        <property name="icon">
-        <iconset resource="myres.qrc">
+        <iconset resource="resource.qrc">
          <normaloff>:/icons/add-16.ico</normaloff>:/icons/add-16.ico</iconset>
        </property>
        <property name="checkable">
@@ -846,10 +839,32 @@ QPushButton:hover {
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap resource="myres.qrc">:/background_images/mm.png</pixmap>
+        <pixmap resource="resource.qrc">:/background_images/mm.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item alignment="Qt::AlignmentFlag::AlignHCenter">
+      <widget class="QLabel" name="edgeNameNotFound">
+       <property name="minimumSize">
+        <size>
+         <width>120</width>
+         <height>25</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>120</width>
+         <height>25</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
        </property>
        <property name="alignment">
         <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -861,7 +876,7 @@ QPushButton:hover {
   </layout>
  </widget>
  <resources>
-  <include location="myres.qrc"/>
+  <include location="resource.qrc"/>
  </resources>
  <connections/>
 </ui>
