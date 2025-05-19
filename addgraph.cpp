@@ -26,10 +26,68 @@ addgraph::addgraph(QWidget *parent)
             this,&addgraph::on_pushButton_clicked);
     connect(ui->pushButton_2, &QPushButton::toggled,
             this,&addgraph::on_pushButton_2_clicked);
+    for(auto it:addgraph::graphCollec){
+        ui->listWidget->addItem(QString::fromStdString(it.first));
 
+    }
+
+    ui->listWidget->setStyleSheet(
+        // Style for the QListWidget container
+        "QListWidget {"
+        "   background-color: #f0fff4;"      // Very light green background
+        "   border: 1px solid #c6f6d5;"      // Soft green border
+        "   border-radius: 6px;"             // Slightly more rounded corners
+        "   padding: 3px;"                   // Slightly more padding
+        "   font-family: 'Segoe UI';"
+        "   font-size: 13px;"                // Slightly larger font
+        "}"
+
+        // Style for individual items
+        "QListWidget::item {"
+        "   height: 28px;"                   // Taller items
+        "   padding: 5px 10px;"              // More padding
+        "   border-bottom: 1px solid #e6ffed;"  // Light green separator
+        "   color: #2d3748;"                 // Dark gray text for better contrast
+        "}"
+
+        // Hover effect
+        "QListWidget::item:hover {"
+        "   background-color: #e6ffed;"      // Light mint green hover
+        "}"
+
+        // Selected item style
+        "QListWidget::item:selected {"
+        "   background-color: #48bb78;"      // Medium green selection
+        "   color: white;"                   // White text
+        "   font-weight: bold;"
+        "}"
+
+        // Optional: Scrollbar styling
+        "QScrollBar:vertical {"
+        "   width: 10px;"
+        "   background: #f0fff4;"
+        "}"
+        "QScrollBar::handle:vertical {"
+        "   background: #c6f6d5;"
+        "   min-height: 20px;"
+        "   border-radius: 5px;"
+        "}"
+        );
 
 }
+void addgraph::showEvent(QShowEvent *event) {
+    QWidget::showEvent(event); // Call base class implementation
+    ui->label_warning->hide();
+    ui->label_waring2->hide();
+    ui->label_waring3->hide();
+    ui->label_waring4->hide();
+    ui->lineEdit->clear();
+    ui->lineEdit_2->clear();
+    ui->lineEdit_3->clear();
+    ui->lineEdit_4->clear();
+    qDebug() << "addgraph is now visible";
 
+}
 addgraph::~addgraph()
 {
     delete ui;

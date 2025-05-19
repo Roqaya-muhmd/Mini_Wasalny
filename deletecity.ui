@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>480</width>
+    <width>486</width>
     <height>344</height>
    </rect>
   </property>
@@ -19,6 +19,28 @@
      <property name="spacing">
       <number>20</number>
      </property>
+     <item alignment="Qt::AlignmentFlag::AlignHCenter">
+      <widget class="QLabel" name="cityNotFound_warning">
+       <property name="minimumSize">
+        <size>
+         <width>120</width>
+         <height>25</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>200</width>
+         <height>30</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
      <item alignment="Qt::AlignmentFlag::AlignHCenter">
       <widget class="QLabel" name="deleteCityNameLabel">
        <property name="minimumSize">
@@ -69,28 +91,6 @@ border-radius: 10px;
       </widget>
      </item>
      <item alignment="Qt::AlignmentFlag::AlignHCenter">
-      <widget class="QLabel" name="cityNotFound_warning">
-       <property name="minimumSize">
-        <size>
-         <width>120</width>
-         <height>25</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>200</width>
-         <height>30</height>
-        </size>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignmentFlag::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item alignment="Qt::AlignmentFlag::AlignHCenter">
       <widget class="QLineEdit" name="deleteCityNameLineEdit">
        <property name="minimumSize">
         <size>
@@ -103,6 +103,11 @@ border-radius: 10px;
          <width>200</width>
          <height>30</height>
         </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">QLineEdit {
@@ -130,7 +135,7 @@ QLineEdit:last-child {
        <property name="maximumSize">
         <size>
          <width>100</width>
-         <height>30</height>
+         <height>40</height>
         </size>
        </property>
        <property name="palette">
@@ -632,7 +637,7 @@ QPushButton:hover {
         <string>حذف</string>
        </property>
        <property name="icon">
-        <iconset resource="myres.qrc">
+        <iconset resource="resource.qrc">
          <normaloff>:/icons/trash-9-16.ico</normaloff>:/icons/trash-9-16.ico</iconset>
        </property>
        <property name="checkable">
@@ -666,7 +671,7 @@ QPushButton:hover {
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap resource="myres.qrc">:/background_images/mm.png</pixmap>
+      <pixmap resource="resource.qrc">:/background_images/mm.png</pixmap>
      </property>
      <property name="scaledContents">
       <bool>true</bool>
@@ -676,7 +681,7 @@ QPushButton:hover {
   </layout>
  </widget>
  <resources>
-  <include location="myres.qrc"/>
+  <include location="resource.qrc"/>
  </resources>
  <connections/>
 </ui>

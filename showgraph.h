@@ -17,9 +17,12 @@ public:
 
 private slots:
     void on_deleteEdgeConfirmButton_clicked();
+    bool check_in();
 
 private:
     Ui::ShowGraph *ui;
+   static std:: string ans;
+    static std::string ans2;
 };
 
 #endif // SHOWGRAPH_H

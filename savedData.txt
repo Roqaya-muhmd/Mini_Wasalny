@@ -130,10 +130,19 @@ b a 2
 
 # Graph: gui
 # Cities
+v
+sl
 a
+t
 b
+s
+r
+u
 # Edges
+v s 0
 a b 11
+t u 8
+r u 3
 
 # Graph: bfstest
 # Cities
@@ -144,11 +153,15 @@ c
 e
 f
 g
+hu
 # Edges
+a g 5
 a c 2
 a b 1
+a d 1
 d b 3
 b e 4
 c g 9
 c f 6
+f g 99
 

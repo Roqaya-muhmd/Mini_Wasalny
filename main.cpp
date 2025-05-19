@@ -5,6 +5,8 @@
 #include <QFileInfo>
 #include "File.h"
 #include <QDir>
+#include <QIcon>
+
 
 int main(int argc, char *argv[])
 {
@@ -25,6 +27,8 @@ int main(int argc, char *argv[])
     }
     // OR apply to specific window
     MainWindow w;
+    w.setWindowTitle("Mini_Wasalni");
+
     w.show();
 
 

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>468</width>
-    <height>546</height>
+    <height>578</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,8 +17,28 @@
    <string notr="true"/>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="0">
+   <item row="0" column="1">
     <layout class="QVBoxLayout" name="verticalLayout">
+     <item alignment="Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignVCenter">
+      <widget class="QListWidget" name="listWidget">
+       <property name="minimumSize">
+        <size>
+         <width>200</width>
+         <height>350</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>120</width>
+         <height>170</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="0" column="0">
+    <layout class="QVBoxLayout" name="verticalLayout_2">
      <item alignment="Qt::AlignmentFlag::AlignHCenter">
       <widget class="QLabel" name="label_4">
        <property name="minimumSize">
@@ -107,6 +127,11 @@ border-radius: 10px;
          <height>30</height>
         </size>
        </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
        <property name="styleSheet">
         <string notr="true">QLineEdit {
     border: 1px solid #ccc;       /* Border color */
@@ -170,7 +195,7 @@ QPushButton:hover {
         <string>اضف اسم</string>
        </property>
        <property name="icon">
-        <iconset resource="myres.qrc">
+        <iconset resource="resource.qrc">
          <normaloff>:/icons/add-row-16.ico</normaloff>:/icons/add-row-16.ico</iconset>
        </property>
        <property name="iconSize">
@@ -234,7 +259,7 @@ border-radius: 10px;
       <widget class="QLabel" name="label_waring2">
        <property name="minimumSize">
         <size>
-         <width>120</width>
+         <width>170</width>
          <height>20</height>
         </size>
        </property>
@@ -265,6 +290,11 @@ border-radius: 10px;
          <width>200</width>
          <height>30</height>
         </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">QLineEdit {
@@ -328,7 +358,7 @@ border-radius: 10px;
       <widget class="QLabel" name="label_waring3">
        <property name="minimumSize">
         <size>
-         <width>120</width>
+         <width>170</width>
          <height>20</height>
         </size>
        </property>
@@ -359,6 +389,11 @@ border-radius: 10px;
          <width>200</width>
          <height>30</height>
         </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
        </property>
       </widget>
      </item>
@@ -409,7 +444,7 @@ border-radius: 10px;
       <widget class="QLabel" name="label_waring4">
        <property name="minimumSize">
         <size>
-         <width>120</width>
+         <width>170</width>
          <height>20</height>
         </size>
        </property>
@@ -440,6 +475,11 @@ border-radius: 10px;
          <width>200</width>
          <height>30</height>
         </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
        </property>
       </widget>
      </item>
@@ -486,7 +526,7 @@ QPushButton:hover {
         <string>اضافه</string>
        </property>
        <property name="icon">
-        <iconset resource="myres.qrc">
+        <iconset resource="resource.qrc">
          <normaloff>:/icons/add-16.ico</normaloff>:/icons/add-16.ico</iconset>
        </property>
        <property name="checkable">
@@ -502,7 +542,7 @@ QPushButton:hover {
   </layout>
  </widget>
  <resources>
-  <include location="myres.qrc"/>
+  <include location="resource.qrc"/>
  </resources>
  <connections/>
 </ui>
